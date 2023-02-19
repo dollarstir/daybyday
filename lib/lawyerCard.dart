@@ -11,6 +11,7 @@ class LawyerCard extends StatelessWidget {
   final String rating;
   final String firm;
   final String location;
+  final String image;
 
   const LawyerCard({
     // required Key key,
@@ -20,6 +21,8 @@ class LawyerCard extends StatelessWidget {
     required this.rating,
     required this.firm,
     required this.location,
+    required this.image,
+    
   });
 
   @override
@@ -47,9 +50,9 @@ class LawyerCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Image.asset(
-              'assets/images/lawyer.jpeg',
-              // height: 70,
-              // width: 30,
+              this.image??'assets/images/1.jpg',
+              height: 70,
+              width: 70,
             ),
           ),
           Column(
@@ -61,7 +64,7 @@ class LawyerCard extends StatelessWidget {
                 child: Text(
                   this.type,
                   style: GoogleFonts.lato(
-                    color: Colors.red,
+                    color: Colors.white,
                     fontSize: 11,
                   ),
                 ),
@@ -69,7 +72,7 @@ class LawyerCard extends StatelessWidget {
                 // width: ,
                 // width: 2,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 245, 132, 132),
+                  color: Color.fromARGB(255, 23, 128, 58),
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),

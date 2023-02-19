@@ -59,7 +59,7 @@ class _HomepageState extends State<Homepage> {
             ),
             Container(
               padding: EdgeInsets.only(left: 15, bottom: 15),
-              child: Text("Let's help you find a lawyer",
+              child: Text("Let's help you Work Abroad",
                   style: TextStyle(
                       color: Colors.black,
                       fontSize: 18,
@@ -138,7 +138,7 @@ class _HomepageState extends State<Homepage> {
               children: [
                 Container(
                   padding: EdgeInsets.only(left: 15),
-                  child: Text("Top Lawyers",
+                  child: Text("Top Jobs",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 18,
@@ -158,43 +158,103 @@ class _HomepageState extends State<Homepage> {
               height: 30,
             ),
             LawyerCard(
-              title: "General",
-              type: "Family",
+              title: "Masons",
+              image: "assets/images/mason3.png",
+              type: "available",
               rating: "4.5",
               firm: "Peneal Legal Consult",
               location: "Amasaman",
             ),
             LawyerCard(
-              title: "General",
-              type: "Family",
+              title: "Carpenters",
+              image: "assets/images/carpenter.png",
+              type: "available",
               rating: "4.5",
               firm: "Peneal Legal Consult",
               location: "Amasaman",
             ),
             LawyerCard(
-              title: "General",
-              type: "Family",
+              title: "Welders",
+              image: "assets/images/welders.png",
+              type: "available",
               rating: "4.5",
               firm: "Peneal Legal Consult",
               location: "Amasaman",
             ),
             LawyerCard(
-              title: "General",
-              type: "Family",
+              title: "Plumbers",
+              image: "assets/images/plumber.png",
+              type: "available",
               rating: "4.5",
               firm: "Peneal Legal Consult",
               location: "Amasaman",
             ),
             LawyerCard(
-              title: "General",
-              type: "Family",
+              title: "House Helps",
+              image: "assets/images/househelp.png",
+              type: "available",
               rating: "4.5",
               firm: "Peneal Legal Consult",
               location: "Amasaman",
             ),
             LawyerCard(
-              title: "General",
-              type: "Family",
+              title: "Cleaners ",
+              image: "assets/images/clean.png",
+              type: "available",
+              rating: "4.5",
+              firm: "Peneal Legal Consult",
+              location: "Amasaman",
+            ),
+
+            LawyerCard(
+              title: "Construction",
+              image: "assets/images/construction.png",
+              type: "available",
+              rating: "4.5",
+              firm: "Peneal Legal Consult",
+              location: "Amasaman",
+            ),
+
+            LawyerCard(
+              title: "Labourers",
+              image: "assets/images/labourer.png",
+              type: "available",
+              rating: "4.5",
+              firm: "Peneal Legal Consult",
+              location: "Amasaman",
+            ),
+
+            LawyerCard(
+              title: "Secretaries",
+              image: "assets/images/construction.png",
+              type: "available",
+              rating: "4.5",
+              firm: "Peneal Legal Consult",
+              location: "Amasaman",
+            ),
+
+            LawyerCard(
+              title: "Shop Attendants",
+              image: "assets/images/construction.png",
+              type: "available",
+              rating: "4.5",
+              firm: "Peneal Legal Consult",
+              location: "Amasaman",
+            ),
+
+            LawyerCard(
+              title: "Manufacturing workers ",
+              image: "assets/images/construction.png",
+              type: "available",
+              rating: "4.5",
+              firm: "Peneal Legal Consult",
+              location: "Amasaman",
+            ),
+
+            LawyerCard(
+              title: "Construction",
+              image: "assets/images/construction.png",
+              type: "available",
               rating: "4.5",
               firm: "Peneal Legal Consult",
               location: "Amasaman",

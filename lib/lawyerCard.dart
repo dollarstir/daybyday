@@ -12,6 +12,7 @@ class LawyerCard extends StatelessWidget {
   final String firm;
   final String location;
   final String image;
+  final  Function() tap;
 
   const LawyerCard({
     // required Key key,
@@ -22,16 +23,14 @@ class LawyerCard extends StatelessWidget {
     required this.firm,
     required this.location,
     required this.image,
+    required this.tap,
     
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Profile()));
-      },
+      onTap: tap,
       child: Container(
         padding: EdgeInsets.only(left: 5, right: 20, bottom: 5, top: 5),
         margin: EdgeInsets.only(left: 20, right: 20, bottom: 20),
@@ -89,23 +88,32 @@ class LawyerCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
           ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                  child: Text(this.firm,
-                      style: GoogleFonts.lato(color: Colors.grey))),
-              Container(
-                  child: Text(this.location,
-                      style: GoogleFonts.lato(color: Colors.grey))),
-              SizedBox(
-                height: 10,
-              ),
-            ],
-          )
+          Container(
+            height: 40,
+            width: 70,
+            child: TextButton(onPressed: null, child: Text('Apply', style: GoogleFonts.lato(color: Colors.white),)),
+            decoration: BoxDecoration(
+              color: Theme.of(context).colorScheme.secondary,
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          // Column(
+          //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //   children: [
+          //     SizedBox(
+          //       height: 10,
+          //     ),
+          //     Container(
+          //         child: Text(this.firm,
+          //             style: GoogleFonts.lato(color: Colors.grey))),
+          //     Container(
+          //         child: Text(this.location,
+          //             style: GoogleFonts.lato(color: Colors.grey))),
+          //     SizedBox(
+          //       height: 10,
+          //     ),
+          //   ],
+          // )
         ]),
       ),
     );

@@ -28,7 +28,7 @@ class _HomeState extends State<Home> {
             Container(
               padding: EdgeInsets.only(left: 30),
               child: Image.asset(
-                'assets/images/justice.png',
+                'assets/images/carpenter.png',
                 height: 120,
                 width: 120,
               ),
@@ -38,7 +38,7 @@ class _HomeState extends State<Home> {
             ),
             Container(
                 padding: EdgeInsets.only(left: 30),
-                child: Text("TheLaw",
+                child: Text("BYDAY JOB AFRICA",
                     style: GoogleFonts.lato(
                         color: Colors.white,
                         fontSize: 45,
@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
             ),
             Container(
                 padding: EdgeInsets.only(left: 30),
-                child: Text("Getting a lawyer\nJust got easier",
+                child: Text("Getting a Job abroad\nJust got easier",
                     style: GoogleFonts.lato(
                         color: Colors.white,
                         fontSize: 28,
@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
             ),
             Container(
                 padding: EdgeInsets.only(left: 30),
-                child: Text("Now you can be heard. Find\na lawyer near you",
+                child: Text("Now you can be heard. Find\na job now",
                     style:
                         GoogleFonts.lato(color: Colors.white, fontSize: 16))),
             SizedBox(

@@ -5,6 +5,7 @@ import 'package:law_app/lawyerCard.dart';
 import 'package:law_app/notification.dart';
 import 'package:law_app/profile.dart';
 import 'package:law_app/search.dart';
+import 'package:law_app/profile.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -19,6 +20,12 @@ class _HomepageState extends State<Homepage> {
     setState(() {
       selectedIndex = index;
     });
+  }
+
+  void tapme(String title) {
+    print(title);
+    // Navigator.push(
+    //     context, MaterialPageRoute(builder: (context) => Profile()));
   }
   final controller = ScrollController();
   double offset = 0;
@@ -158,6 +165,9 @@ class _HomepageState extends State<Homepage> {
               height: 30,
             ),
             LawyerCard(
+              tap:  (){
+                tapme('Masons');
+                },
               title: "Masons",
               image: "assets/images/mason3.png",
               type: "available",
@@ -166,6 +176,9 @@ class _HomepageState extends State<Homepage> {
               location: "Amasaman",
             ),
             LawyerCard(
+              tap:  (){
+                tapme('Carpenters');
+                },
               title: "Carpenters",
               image: "assets/images/carpenter.png",
               type: "available",
@@ -174,6 +187,9 @@ class _HomepageState extends State<Homepage> {
               location: "Amasaman",
             ),
             LawyerCard(
+              tap:  (){
+                tapme('Welders');
+                },
               title: "Welders",
               image: "assets/images/welders.png",
               type: "available",
@@ -182,6 +198,9 @@ class _HomepageState extends State<Homepage> {
               location: "Amasaman",
             ),
             LawyerCard(
+              tap:  (){
+                tapme('Plumbers');
+                },
               title: "Plumbers",
               image: "assets/images/plumber.png",
               type: "available",
@@ -190,6 +209,9 @@ class _HomepageState extends State<Homepage> {
               location: "Amasaman",
             ),
             LawyerCard(
+              tap:  (){
+                tapme('House Helps');
+                },
               title: "House Helps",
               image: "assets/images/househelp.png",
               type: "available",
@@ -198,6 +220,9 @@ class _HomepageState extends State<Homepage> {
               location: "Amasaman",
             ),
             LawyerCard(
+              tap:  (){
+                tapme('Cleaners');
+                },
               title: "Cleaners ",
               image: "assets/images/clean.png",
               type: "available",
@@ -207,6 +232,9 @@ class _HomepageState extends State<Homepage> {
             ),
 
             LawyerCard(
+              tap:  (){
+                tapme('Construction');
+                },
               title: "Construction",
               image: "assets/images/construction.png",
               type: "available",
@@ -216,8 +244,11 @@ class _HomepageState extends State<Homepage> {
             ),
 
             LawyerCard(
+              tap:  (){
+                tapme('Labourers');
+                },
               title: "Labourers",
-              image: "assets/images/labourer.png",
+              image: "assets/images/labor.png",
               type: "available",
               rating: "4.5",
               firm: "Peneal Legal Consult",
@@ -225,8 +256,11 @@ class _HomepageState extends State<Homepage> {
             ),
 
             LawyerCard(
+              tap:  (){
+                tapme('Secretaries');
+                },
               title: "Secretaries",
-              image: "assets/images/construction.png",
+              image: "assets/images/secretary.png",
               type: "available",
               rating: "4.5",
               firm: "Peneal Legal Consult",
@@ -234,8 +268,11 @@ class _HomepageState extends State<Homepage> {
             ),
 
             LawyerCard(
+              tap:  (){
+                tapme('Shop Attendants');
+                },
               title: "Shop Attendants",
-              image: "assets/images/construction.png",
+              image: "assets/images/shop.png",
               type: "available",
               rating: "4.5",
               firm: "Peneal Legal Consult",
@@ -243,8 +280,12 @@ class _HomepageState extends State<Homepage> {
             ),
 
             LawyerCard(
+              tap:  (){
+                tapme('Manufacturing workers');
+                },
+              
               title: "Manufacturing workers ",
-              image: "assets/images/construction.png",
+              image: "assets/images/manufacturing.png",
               type: "available",
               rating: "4.5",
               firm: "Peneal Legal Consult",
@@ -252,8 +293,53 @@ class _HomepageState extends State<Homepage> {
             ),
 
             LawyerCard(
-              title: "Construction",
-              image: "assets/images/construction.png",
+              tap:  (){
+                tapme('Mechanics');
+                },
+              title: "Mechanics",
+              image: "assets/images/mechanic.png",
+              type: "available",
+              rating: "4.5",
+              firm: "Peneal Legal Consult",
+              location: "Amasaman",
+            ),
+
+
+
+            LawyerCard(
+              tap:  (){
+                tapme('Barbers');
+                },
+              title: "Barbers",
+              image: "assets/images/barber.png",
+              type: "available",
+              rating: "4.5",
+              firm: "Peneal Legal Consult",
+              location: "Amasaman",
+            ),
+
+            LawyerCard(
+              tap:  (){
+                tapme('Chefs');
+                },
+              title: "Chefs",
+              image: "assets/images/chef.png",
+              type: "available",
+              rating: "4.5",
+              firm: "Peneal Legal Consult",
+              location: "Amasaman",
+            ),
+
+
+            
+
+
+            LawyerCard(
+              tap:  (){
+                tapme('Shoe makers');
+                },
+              title: "Shoe makers",
+              image: "assets/images/shoe.png",
               type: "available",
               rating: "4.5",
               firm: "Peneal Legal Consult",

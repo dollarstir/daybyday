@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:law_app/apply.dart';
 import 'package:law_app/categoryModel.dart';
 import 'package:law_app/lawyerCard.dart';
 import 'package:law_app/notification.dart';
@@ -22,10 +23,12 @@ class _HomepageState extends State<Homepage> {
     });
   }
 
-  void tapme(String title) {
+  void tapme(String title, String pic) {
     print(title);
-    // Navigator.push(
-    //     context, MaterialPageRoute(builder: (context) => Profile()));
+    // passing data to another page
+    
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => Apply(title: title,pic :pic)));
   }
   final controller = ScrollController();
   double offset = 0;
@@ -72,26 +75,26 @@ class _HomepageState extends State<Homepage> {
                       fontSize: 18,
                       fontWeight: FontWeight.bold)),
             ),
-            Container(
-              width: double.infinity,
-              height: 40,
-              decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 247, 247, 247), borderRadius: BorderRadius.circular(5)),
-              child: Center(
-                child: TextField(
-                  decoration: InputDecoration(
-                      prefixIcon: const Icon(Icons.search),
-                      suffixIcon: IconButton(
-                        icon: const Icon(Icons.clear),
-                        onPressed: () {
-                          /* Clear the search field */
-                        },
-                      ),
-                      hintText: 'Search...',
-                      border: InputBorder.none),
-                ),
-              ),
-            ),
+            // Container(
+            //   width: double.infinity,
+            //   height: 40,
+            //   decoration: BoxDecoration(
+            //       color: Color.fromARGB(255, 247, 247, 247), borderRadius: BorderRadius.circular(5)),
+            //   child: Center(
+            //     child: TextField(
+            //       decoration: InputDecoration(
+            //           prefixIcon: const Icon(Icons.search),
+            //           suffixIcon: IconButton(
+            //             icon: const Icon(Icons.clear),
+            //             onPressed: () {
+            //               /* Clear the search field */
+            //             },
+            //           ),
+            //           hintText: 'Search...',
+            //           border: InputBorder.none),
+            //     ),
+            //   ),
+            // ),
             SizedBox(
               height: 30,
             ),
@@ -100,7 +103,7 @@ class _HomepageState extends State<Homepage> {
               children: [
                 Container(
                   padding: EdgeInsets.only(left: 15),
-                  child: Text("Category",
+                  child: Text("Services",
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 18,
@@ -125,15 +128,25 @@ class _HomepageState extends State<Homepage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  CategoryModel(
-                    title: "General",
+                  GestureDetector(
+                    // onTap: () {
+                    //   tapme("Work Abroad", "assets/images/workabroad.png");
+                    // },
+                    child: CategoryModel(
+                      title: "Work Abroad",
+                      image: "assets/images/workabroad.png",
+                    ),
                   ),
-                  CategoryModel(
-                    title: "Family",
+                  GestureDetector(
+                    onTap: () {
+                      tapme("Passport", "assets/images/passport.png");
+                    },
+                    child: CategoryModel(
+                      title: "Passport",
+                      image: "assets/images/passport.png",
+                    ),
                   ),
-                  CategoryModel(
-                    title: "Crime",
-                  ),
+                  
                 ],
               ),
             ),
@@ -166,7 +179,8 @@ class _HomepageState extends State<Homepage> {
             ),
             LawyerCard(
               tap:  (){
-                tapme('Masons');
+                tapme('Masons','assets/images/mason3.png');
+                
                 },
               title: "Masons",
               image: "assets/images/mason3.png",
@@ -177,7 +191,7 @@ class _HomepageState extends State<Homepage> {
             ),
             LawyerCard(
               tap:  (){
-                tapme('Carpenters');
+                tapme('Carpenters','assets/images/carpenter.png');
                 },
               title: "Carpenters",
               image: "assets/images/carpenter.png",
@@ -188,7 +202,7 @@ class _HomepageState extends State<Homepage> {
             ),
             LawyerCard(
               tap:  (){
-                tapme('Welders');
+                tapme('Welders','assets/images/welders.png');
                 },
               title: "Welders",
               image: "assets/images/welders.png",
@@ -199,7 +213,7 @@ class _HomepageState extends State<Homepage> {
             ),
             LawyerCard(
               tap:  (){
-                tapme('Plumbers');
+                tapme('Plumbers','assets/images/plumber.png');
                 },
               title: "Plumbers",
               image: "assets/images/plumber.png",
@@ -210,7 +224,7 @@ class _HomepageState extends State<Homepage> {
             ),
             LawyerCard(
               tap:  (){
-                tapme('House Helps');
+                tapme('House Helps','assets/images/househelp.png');
                 },
               title: "House Helps",
               image: "assets/images/househelp.png",
@@ -221,7 +235,7 @@ class _HomepageState extends State<Homepage> {
             ),
             LawyerCard(
               tap:  (){
-                tapme('Cleaners');
+                tapme('Cleaners','assets/images/clean.png');
                 },
               title: "Cleaners ",
               image: "assets/images/clean.png",
@@ -233,7 +247,7 @@ class _HomepageState extends State<Homepage> {
 
             LawyerCard(
               tap:  (){
-                tapme('Construction');
+                tapme('Construction','assets/images/construction.png');
                 },
               title: "Construction",
               image: "assets/images/construction.png",
@@ -245,7 +259,7 @@ class _HomepageState extends State<Homepage> {
 
             LawyerCard(
               tap:  (){
-                tapme('Labourers');
+                tapme('Labourers','assets/images/labor.png');
                 },
               title: "Labourers",
               image: "assets/images/labor.png",
@@ -257,7 +271,7 @@ class _HomepageState extends State<Homepage> {
 
             LawyerCard(
               tap:  (){
-                tapme('Secretaries');
+                tapme('Secretaries','assets/images/secretary.png');
                 },
               title: "Secretaries",
               image: "assets/images/secretary.png",
@@ -269,7 +283,7 @@ class _HomepageState extends State<Homepage> {
 
             LawyerCard(
               tap:  (){
-                tapme('Shop Attendants');
+                tapme('Shop Attendants',  'assets/images/shop.png');
                 },
               title: "Shop Attendants",
               image: "assets/images/shop.png",
@@ -281,7 +295,7 @@ class _HomepageState extends State<Homepage> {
 
             LawyerCard(
               tap:  (){
-                tapme('Manufacturing workers');
+                tapme('Manufacturing workers','assets/images/manufacturing.png');
                 },
               
               title: "Manufacturing workers ",
@@ -294,7 +308,7 @@ class _HomepageState extends State<Homepage> {
 
             LawyerCard(
               tap:  (){
-                tapme('Mechanics');
+                tapme('Mechanics','assets/images/mechanic.png');
                 },
               title: "Mechanics",
               image: "assets/images/mechanic.png",
@@ -308,7 +322,7 @@ class _HomepageState extends State<Homepage> {
 
             LawyerCard(
               tap:  (){
-                tapme('Barbers');
+                tapme('Barbers','assets/images/barber.png');
                 },
               title: "Barbers",
               image: "assets/images/barber.png",
@@ -320,7 +334,7 @@ class _HomepageState extends State<Homepage> {
 
             LawyerCard(
               tap:  (){
-                tapme('Chefs');
+                tapme('Chefs','assets/images/chef.png');
                 },
               title: "Chefs",
               image: "assets/images/chef.png",
@@ -336,7 +350,7 @@ class _HomepageState extends State<Homepage> {
 
             LawyerCard(
               tap:  (){
-                tapme('Shoe makers');
+                tapme('Shoe makers','assets/images/shoe.png');
                 },
               title: "Shoe makers",
               image: "assets/images/shoe.png",
@@ -347,7 +361,7 @@ class _HomepageState extends State<Homepage> {
             ),
           ],
         ),
-      )), Search(), NotificationPage(), Profile()];
+      )), Search(), NotificationPage(), Profile(title: "Welcome",)];
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 247, 247, 247),
       appBar: AppBar(

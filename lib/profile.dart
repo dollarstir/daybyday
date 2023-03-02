@@ -4,13 +4,17 @@ import 'package:law_app/hompage.dart';
 import 'package:law_app/subscribe.dart';
 
 class Profile extends StatefulWidget {
-  const Profile({Key? key}) : super(key: key);
+  String title;
+   Profile({Key ?key, required this.title}) : super(key: key);
 
   @override
-  State<Profile> createState() => _ProfileState();
+  State<Profile> createState() => _ProfileState(title: title);
 }
 
 class _ProfileState extends State<Profile> {
+
+  String title;
+  _ProfileState({required this.title});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +57,7 @@ class _ProfileState extends State<Profile> {
                         ),
                       ),
                       Container(
-                        child: Text("General Lawyer",
+                        child: Text(title,
                             style: GoogleFonts.lato(
                               color: Colors.white,
                             )),

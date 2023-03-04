@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:law_app/hompage.dart';
 import 'package:law_app/subscribe.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+// import 'package:http/http.dart';
 
 class Apply extends StatefulWidget {
   String title;
@@ -15,11 +21,75 @@ class Apply extends StatefulWidget {
 class _ApplyState extends State<Apply> {
   String title;
   String pic;
+  bool _visible = true;
+  var _image;
+
+
+ String uploadEndPoint ='http://192.168.50.145/daybyday/upload.php';
+  String? base64Image;
+  File? tmpFile;
+  String status = '';
+  String errMessage = 'Error Uploading Image';
+  var _name = TextEditingController();
+  var _phone = TextEditingController();
+  var _location = TextEditingController();
+  var _age = TextEditingController();
+  var _idcard = TextEditingController();
+  
+
+  Future getImage() async {
+    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    setState(() {
+      _image = File(image!.path);
+      tmpFile = _image;
+      base64Image = base64Encode(_image.readAsBytesSync());
+    });
+  }
+
+
+
+  setStatus(String message) {
+    setState(() {
+      status = message;
+    });
+  }
+
+
+  upload(String fileName) {
+  http.post(Uri.parse(uploadEndPoint), body: {
+    "image": base64Image,
+    "picname": fileName,
+    "name": _name.text,
+    "phone": _phone.text,
+    "location": _location.text,
+    "age": _age.text,
+    "idcard": _idcard.text,
+    'job': title,
+    
+
+  }).then((result) {
+    setStatus(result.statusCode == 200 ? result.body : errMessage);
+  }).catchError((error) {
+    setStatus(error);
+  });
+}
+
+
+
+startUpload() {
+    setStatus('Uploading Image...');
+    if (null == tmpFile) {
+      setStatus(errMessage);
+      return;
+    }
+    String fileName = tmpFile!.path.split('/').last;
+    upload(fileName);
+  }
 
   _ApplyState({required this.title, required this.pic});
   @override
   Widget build(BuildContext context) {
-  var devicewith = MediaQuery.of(context).size.width;
+    var devicewith = MediaQuery.of(context).size.width;
     var deviceheight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 247, 247, 247),
@@ -42,7 +112,6 @@ class _ApplyState extends State<Apply> {
                   borderRadius: BorderRadius.circular(60),
                   child: Image.asset(
                     pic,
-                    
                   ),
                 ),
               ),
@@ -263,8 +332,9 @@ class _ApplyState extends State<Apply> {
             ),
             child: Center(
               child: TextField(
-                decoration: InputDecoration(
-                    hintText: 'Name', border: InputBorder.none),
+                controller:_name,
+                decoration:
+                    InputDecoration(hintText: 'Name', border: InputBorder.none),
               ),
             ),
           ),
@@ -272,7 +342,6 @@ class _ApplyState extends State<Apply> {
           SizedBox(
             height: deviceheight * 0.02,
           ),
-
 
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -287,17 +356,16 @@ class _ApplyState extends State<Apply> {
             ),
             child: Center(
               child: TextField(
+                controller:_phone,
                 decoration: InputDecoration(
                     hintText: 'Phone Number', border: InputBorder.none),
               ),
             ),
           ),
 
-
           SizedBox(
             height: deviceheight * 0.02,
           ),
-
 
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -312,19 +380,16 @@ class _ApplyState extends State<Apply> {
             ),
             child: Center(
               child: TextField(
+                controller:_location,
                 decoration: InputDecoration(
                     hintText: 'Location', border: InputBorder.none),
               ),
             ),
           ),
 
-
-
-
           SizedBox(
             height: deviceheight * 0.02,
           ),
-
 
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -339,21 +404,18 @@ class _ApplyState extends State<Apply> {
             ),
             child: Center(
               child: TextField(
-                decoration: InputDecoration(
-                    hintText: 'Age', border: InputBorder.none),
+                controller:_age,
+                decoration:
+                    InputDecoration(hintText: 'Age', border: InputBorder.none),
               ),
             ),
           ),
-
-
 
           SizedBox(
             height: deviceheight * 0.02,
           ),
 
-
           Container(
-            
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             margin: EdgeInsets.symmetric(horizontal: 20),
             decoration: BoxDecoration(
@@ -366,26 +428,20 @@ class _ApplyState extends State<Apply> {
             ),
             child: Center(
               child: TextField(
+                controller:_idcard,
                 decoration: InputDecoration(
-                    hintText: 'Ghana Card/Passport Number', border: InputBorder.none),
+                    hintText: 'Ghana Card/Passport Number',
+                    border: InputBorder.none),
               ),
             ),
           ),
-
-
-
-
-
 
           SizedBox(
             height: deviceheight * 0.03,
           ),
 
-
           GestureDetector(
-            onTap: () {
-              print("upload passport");
-            },
+            onTap: getImage,
             child: Container(
               height: deviceheight * 0.08,
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -393,21 +449,97 @@ class _ApplyState extends State<Apply> {
               decoration: BoxDecoration(
                 boxShadow: <BoxShadow>[
                   BoxShadow(
-                      offset: Offset(0, 0), color: Colors.black26, blurRadius: 5),
+                      offset: Offset(0, 0),
+                      color: Colors.black26,
+                      blurRadius: 5),
                 ],
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
               ),
               child: Center(
-                child:Row(children: [
+                  child: Row(
+                children: [
                   Icon(Icons.camera_alt),
-                  SizedBox(width: 10,),
-                  Text("Upload Passport size picture",style: GoogleFonts.lato(color: Colors.black,fontSize: 14),)
-          
-                ],)
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    "Upload Passport size picture",
+                    style: GoogleFonts.lato(color: Colors.black, fontSize: 14),
+                  )
+                ],
+              )),
+            ),
+          ),
+
+          SizedBox(
+            height: deviceheight * 0.02,
+          ),
+
+          Visibility(
+            visible: _visible,
+            child: Container(
+              width: devicewith * 0.9,
+              height: deviceheight * 0.4,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              margin: EdgeInsets.symmetric(horizontal: 20),
+              decoration: BoxDecoration(
+                boxShadow: <BoxShadow>[
+                  BoxShadow(
+                      offset: Offset(0, 0),
+                      color: Colors.black26,
+                      blurRadius: 5),
+                ],
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+              ),
+              child: Center(
+                child: _image == null
+                    ? Text('No image selected.')
+                    : Image.file(
+                        _image,
+                        width: devicewith * 0.9,
+                        height: deviceheight * 0.4,
+                        fit: BoxFit.fill,
+                      ),
               ),
             ),
           ),
+
+
+
+
+
+          // status
+
+          SizedBox(
+            height: deviceheight * 0.02,
+          ),
+
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            margin: EdgeInsets.symmetric(horizontal: 20),
+            decoration: BoxDecoration(
+              boxShadow: <BoxShadow>[
+                BoxShadow(
+                    offset: Offset(0, 0), color: Colors.black26, blurRadius: 5),
+              ],
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+            ),
+            child: Center(
+              child: Text(
+              status,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.green,
+                fontWeight: FontWeight.w500,
+                fontSize: 20.0,
+              ),
+            ),
+            ),
+          ),
+
           SizedBox(
             height: 20,
           ),
@@ -419,10 +551,7 @@ class _ApplyState extends State<Apply> {
                     fixedSize: MaterialStateProperty.all(Size(350, 50)),
                     backgroundColor:
                         MaterialStateProperty.all(Color(0xFFc07f00))),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Homepage()));
-                },
+                onPressed:startUpload,
                 child: Text(
                   "Submit",
                   style: GoogleFonts.lato(color: Colors.white),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:law_app/hompage.dart';
-import 'package:law_app/subscribe.dart';
+import 'package:Byday_Job_Africa/hompage.dart';
+import 'package:Byday_Job_Africa/subscribe.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';

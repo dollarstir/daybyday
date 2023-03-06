@@ -1,4 +1,0 @@
-#Fri Mar 03 13:02:22 GMT 2023
-base.0=/Users/dollarstir/Documents/Flutter/law-app/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

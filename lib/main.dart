@@ -1,7 +1,20 @@
+import 'package:Byday_Job_Africa/home.dart';
+import 'package:Byday_Job_Africa/hompage.dart';
 import 'package:flutter/material.dart';
-import 'package:law_app/home.dart';
 
-void main() {
+import 'package:path_provider/path_provider.dart' as path;
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+
+
+void main() async{
+
+  WidgetsFlutterBinding.ensureInitialized();
+  final dir = await path.getApplicationDocumentsDirectory();
+  Hive.init(dir.path);
+  await Hive.openBox("bydayjobafrica");
   runApp(const MyApp());
 }
 
@@ -23,63 +36,49 @@ MaterialColor colorCustom = MaterialColor(0xff4c4c4c, color);
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+  Widget ?pageChecher(){
+  var box =  Hive.box('bydayjobafrica');
+    // var firstTime = box.get("firstTime");
+    var islogin =  box.get("islog");
+    var isfirstime =  box.get("firstrun");
+
+   try{
+      if(isfirstime == null){
+          return Home();
+        }
+        else{
+
+        return Homepage();
+        }
+   }catch (e) {
+     print (e);
+   }
+  
+  
+  }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'ByDay Job Africa',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: colorCustom,
           scaffoldBackgroundColor: const Color(0xFFc07f00)),
-      home: const Home(),
+      home: AnimatedSplashScreen(
+          duration: 3000,
+          splash: Image.asset(
+            'assets/images/logo.png',
+            width: double.infinity,
+            height: 500,
+          ),
+          nextScreen: pageChecher()!,
+          splashTransition: SplashTransition.scaleTransition,
+          // pageTransitionType: pageTransitionTy
+          backgroundColor: Colors.black),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}

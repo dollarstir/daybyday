@@ -2,8 +2,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:law_app/Signin.dart';
-import 'package:law_app/hompage.dart';
+import 'package:Byday_Job_Africa/Signin.dart';
+import 'package:Byday_Job_Africa/hompage.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -15,6 +15,8 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
+    var devicewith = MediaQuery.of(context).size.width;
+    var deviceheight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
@@ -23,18 +25,18 @@ class _HomeState extends State<Home> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 150,
+              height: deviceheight * 0.08,
             ),
             Container(
               padding: EdgeInsets.only(left: 30),
               child: Image.asset(
                 'assets/images/carpenter.png',
-                height: 120,
-                width: 120,
+                height: deviceheight * 0.2,
+                width: devicewith * 0.4,
               ),
             ),
             SizedBox(
-              height: 50,
+              height: deviceheight * 0.06,
             ),
             Container(
                 padding: EdgeInsets.only(left: 30),
@@ -44,7 +46,7 @@ class _HomeState extends State<Home> {
                         fontSize: 45,
                         fontWeight: FontWeight.bold))),
             SizedBox(
-              height: 50,
+              height: deviceheight * 0.06,
             ),
             Container(
                 padding: EdgeInsets.only(left: 30),
@@ -54,7 +56,7 @@ class _HomeState extends State<Home> {
                         fontSize: 28,
                         fontWeight: FontWeight.bold))),
             SizedBox(
-              height: 20,
+              height: deviceheight * 0.04,
             ),
             Container(
                 padding: EdgeInsets.only(left: 30),
@@ -62,10 +64,10 @@ class _HomeState extends State<Home> {
                     style:
                         GoogleFonts.lato(color: Colors.white, fontSize: 16))),
             SizedBox(
-              height: 50,
+              height: deviceheight * 0.07,
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 30.0),
+              padding: const EdgeInsets.only(left: 50.0),
               child: ElevatedButton(
                   style: ButtonStyle(
                       // padding: MaterialStateProperty.all(EdgeInsets.only(left: 30)),
@@ -73,7 +75,7 @@ class _HomeState extends State<Home> {
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SignIn()));
+                        MaterialPageRoute(builder: (context) => Homepage()));
                   },
                   child: Text(
                     "Get Started",

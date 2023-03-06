@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:law_app/hompage.dart';
-import 'package:law_app/signup.dart';
+import 'package:Byday_Job_Africa/hompage.dart';
+import 'package:Byday_Job_Africa/signup.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignIn extends StatefulWidget {

@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:law_app/profile.dart';
+import 'package:Byday_Job_Africa/Profile.dart';
 
 class LawyerCard extends StatelessWidget {
   // final String image;

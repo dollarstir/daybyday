@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:law_app/Signin.dart';
-import 'package:law_app/hompage.dart';
+import 'package:Byday_Job_Africa/Signin.dart';
+import 'package:Byday_Job_Africa/hompage.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);

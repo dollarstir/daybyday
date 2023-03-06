@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:law_app/apply.dart';
-import 'package:law_app/categoryModel.dart';
-import 'package:law_app/lawyerCard.dart';
-import 'package:law_app/notification.dart';
-import 'package:law_app/profile.dart';
-import 'package:law_app/search.dart';
-import 'package:law_app/profile.dart';
+import 'package:Byday_Job_Africa/apply.dart';
+import 'package:Byday_Job_Africa/categoryModel.dart';
+import 'package:Byday_Job_Africa/lawyerCard.dart';
+import 'package:Byday_Job_Africa/notification.dart';
+import 'package:Byday_Job_Africa/profile.dart';
+import 'package:Byday_Job_Africa/search.dart';
+import 'package:Byday_Job_Africa/profile.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -26,10 +26,11 @@ class _HomepageState extends State<Homepage> {
   void tapme(String title, String pic) {
     print(title);
     // passing data to another page
-    
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Apply(title: title,pic :pic)));
+
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => Apply(title: title, pic: pic)));
   }
+
   final controller = ScrollController();
   double offset = 0;
 
@@ -53,11 +54,10 @@ class _HomepageState extends State<Homepage> {
     });
   }
 
- 
-
   @override
   Widget build(BuildContext context) {
-      final List<Widget> screens = [SafeArea(
+    final List<Widget> screens = [
+      SafeArea(
           child: SingleChildScrollView(
         controller: controller,
         child: Column(
@@ -65,7 +65,7 @@ class _HomepageState extends State<Homepage> {
           children: [
             Container(
               padding: EdgeInsets.all(15),
-              child: Text("Hello Fred"),
+              child: Text("Hello User"),
             ),
             Container(
               padding: EdgeInsets.only(left: 15, bottom: 15),
@@ -146,7 +146,6 @@ class _HomepageState extends State<Homepage> {
                       image: "assets/images/passport.png",
                     ),
                   ),
-                  
                 ],
               ),
             ),
@@ -178,10 +177,9 @@ class _HomepageState extends State<Homepage> {
               height: 30,
             ),
             LawyerCard(
-              tap:  (){
-                tapme('Masons','assets/images/mason3.png');
-                
-                },
+              tap: () {
+                tapme('Masons', 'assets/images/mason3.png');
+              },
               title: "Masons",
               image: "assets/images/mason3.png",
               type: "available",
@@ -190,9 +188,9 @@ class _HomepageState extends State<Homepage> {
               location: "Amasaman",
             ),
             LawyerCard(
-              tap:  (){
-                tapme('Carpenters','assets/images/carpenter.png');
-                },
+              tap: () {
+                tapme('Carpenters', 'assets/images/carpenter.png');
+              },
               title: "Carpenters",
               image: "assets/images/carpenter.png",
               type: "available",
@@ -201,9 +199,9 @@ class _HomepageState extends State<Homepage> {
               location: "Amasaman",
             ),
             LawyerCard(
-              tap:  (){
-                tapme('Welders','assets/images/welders.png');
-                },
+              tap: () {
+                tapme('Welders', 'assets/images/welders.png');
+              },
               title: "Welders",
               image: "assets/images/welders.png",
               type: "available",
@@ -212,9 +210,9 @@ class _HomepageState extends State<Homepage> {
               location: "Amasaman",
             ),
             LawyerCard(
-              tap:  (){
-                tapme('Plumbers','assets/images/plumber.png');
-                },
+              tap: () {
+                tapme('Plumbers', 'assets/images/plumber.png');
+              },
               title: "Plumbers",
               image: "assets/images/plumber.png",
               type: "available",
@@ -223,9 +221,9 @@ class _HomepageState extends State<Homepage> {
               location: "Amasaman",
             ),
             LawyerCard(
-              tap:  (){
-                tapme('House Helps','assets/images/househelp.png');
-                },
+              tap: () {
+                tapme('House Helps', 'assets/images/househelp.png');
+              },
               title: "House Helps",
               image: "assets/images/househelp.png",
               type: "available",
@@ -234,9 +232,9 @@ class _HomepageState extends State<Homepage> {
               location: "Amasaman",
             ),
             LawyerCard(
-              tap:  (){
-                tapme('Cleaners','assets/images/clean.png');
-                },
+              tap: () {
+                tapme('Cleaners', 'assets/images/clean.png');
+              },
               title: "Cleaners ",
               image: "assets/images/clean.png",
               type: "available",
@@ -246,9 +244,9 @@ class _HomepageState extends State<Homepage> {
             ),
 
             LawyerCard(
-              tap:  (){
-                tapme('Construction','assets/images/construction.png');
-                },
+              tap: () {
+                tapme('Construction', 'assets/images/construction.png');
+              },
               title: "Construction",
               image: "assets/images/construction.png",
               type: "available",
@@ -258,9 +256,9 @@ class _HomepageState extends State<Homepage> {
             ),
 
             LawyerCard(
-              tap:  (){
-                tapme('Labourers','assets/images/labor.png');
-                },
+              tap: () {
+                tapme('Labourers', 'assets/images/labor.png');
+              },
               title: "Labourers",
               image: "assets/images/labor.png",
               type: "available",
@@ -270,9 +268,9 @@ class _HomepageState extends State<Homepage> {
             ),
 
             LawyerCard(
-              tap:  (){
-                tapme('Secretaries','assets/images/secretary.png');
-                },
+              tap: () {
+                tapme('Secretaries', 'assets/images/secretary.png');
+              },
               title: "Secretaries",
               image: "assets/images/secretary.png",
               type: "available",
@@ -282,9 +280,9 @@ class _HomepageState extends State<Homepage> {
             ),
 
             LawyerCard(
-              tap:  (){
-                tapme('Shop Attendants',  'assets/images/shop.png');
-                },
+              tap: () {
+                tapme('Shop Attendants', 'assets/images/shop.png');
+              },
               title: "Shop Attendants",
               image: "assets/images/shop.png",
               type: "available",
@@ -294,10 +292,10 @@ class _HomepageState extends State<Homepage> {
             ),
 
             LawyerCard(
-              tap:  (){
-                tapme('Manufacturing workers','assets/images/manufacturing.png');
-                },
-              
+              tap: () {
+                tapme(
+                    'Manufacturing workers', 'assets/images/manufacturing.png');
+              },
               title: "Manufacturing workers ",
               image: "assets/images/manufacturing.png",
               type: "available",
@@ -307,9 +305,9 @@ class _HomepageState extends State<Homepage> {
             ),
 
             LawyerCard(
-              tap:  (){
-                tapme('Mechanics','assets/images/mechanic.png');
-                },
+              tap: () {
+                tapme('Mechanics', 'assets/images/mechanic.png');
+              },
               title: "Mechanics",
               image: "assets/images/mechanic.png",
               type: "available",
@@ -318,12 +316,10 @@ class _HomepageState extends State<Homepage> {
               location: "Amasaman",
             ),
 
-
-
             LawyerCard(
-              tap:  (){
-                tapme('Barbers','assets/images/barber.png');
-                },
+              tap: () {
+                tapme('Barbers', 'assets/images/barber.png');
+              },
               title: "Barbers",
               image: "assets/images/barber.png",
               type: "available",
@@ -333,9 +329,9 @@ class _HomepageState extends State<Homepage> {
             ),
 
             LawyerCard(
-              tap:  (){
-                tapme('Chefs','assets/images/chef.png');
-                },
+              tap: () {
+                tapme('Chefs', 'assets/images/chef.png');
+              },
               title: "Chefs",
               image: "assets/images/chef.png",
               type: "available",
@@ -344,14 +340,10 @@ class _HomepageState extends State<Homepage> {
               location: "Amasaman",
             ),
 
-
-            
-
-
             LawyerCard(
-              tap:  (){
-                tapme('Shoe makers','assets/images/shoe.png');
-                },
+              tap: () {
+                tapme('Shoe makers', 'assets/images/shoe.png');
+              },
               title: "Shoe makers",
               image: "assets/images/shoe.png",
               type: "available",
@@ -361,160 +353,164 @@ class _HomepageState extends State<Homepage> {
             ),
           ],
         ),
-      )), Search(), NotificationPage(), Profile(title: "Welcome",)];
+      )),
+      Profile(
+        title: "Welcome",
+      )
+    ];
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 247, 247, 247),
-      appBar: AppBar(
-        elevation: 0,
-        iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Color.fromARGB(255, 247, 247, 247),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.notifications,
-                color: Colors.black,
-              )),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.perm_contact_calendar,
-                color: Colors.black,
-              ))
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          physics: const BouncingScrollPhysics(),
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    image: DecorationImage(
-                        image: Image.asset("assets/images/justice.png").image,
-                        fit: BoxFit.cover)),
-                child: const Opacity(
-                  opacity: 0.0,
-                  child: Text(
-                    "Stedap News",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      //color: Colors.blue,
-                    ),
-                  ),
+        appBar: AppBar(
+          elevation: 0,
+          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Color.fromARGB(255, 247, 247, 247),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.notifications,
+                  color: Colors.black,
                 )),
-            ListTile(
-              title: const Text(
-                "Home",
-                style: TextStyle(fontWeight: FontWeight.w700),
-              ),
-              leading: const Icon(Icons.home, color: Colors.blueAccent),
-              onTap: () {
-                // print("home");
-                Navigator.pop(context);
-                // Navigator.push(context,
-                //     MaterialPageRoute(builder: (context) => HomeScreen()));
-              },
-            ),
-            ListTile(
-                title: const Text(
-                  "Send Us a mail",
-                  style: TextStyle(fontWeight: FontWeight.w700),
-                ),
-                leading: const Icon(Icons.mail, color: Colors.blueAccent),
-                onTap: () {
-                  // print("mail");
-                  // mail();
-                  Navigator.pop(context);
-                }),
-            // ListTile(
-            //     title: Text("Send Us a message"),
-            //     leading: Icon(Icons.message, color: Colors.blueAccent),
-            //     onTap: () {
-            //       print("message");
-            //       Navigator.pop(context);
-            //     }),
-
-            ListTile(
-                title: const Text(
-                  "Visit Us",
-                  style: TextStyle(fontWeight: FontWeight.w700),
-                ),
-                leading: const Icon(Icons.explore, color: Colors.blueAccent),
-                onTap: () {
-                  // print("visit");
-                  // mail();
-                  Navigator.pop(context);
-                  const url = "http://www.stedap1.site.live";
-                  // launchUrl(url);
-                }),
-            ListTile(
-                title: const Text(
-                  "Call Us",
-                  style: TextStyle(fontWeight: FontWeight.w700),
-                ),
-                leading: const Icon(Icons.call, color: Colors.blueAccent),
-                onTap: () {
-                  // print("Call Made");
-                  // call();
-                  Navigator.pop(context);
-                }),
-            ListTile(
-                title: const Text(
-                  "Close",
-                  style: TextStyle(fontWeight: FontWeight.w700),
-                ),
-                leading:
-                    const Icon(Icons.exit_to_app, color: Colors.blueAccent),
-                onTap: () {
-                  // print("add people");
-                  Navigator.pop(context);
-                })
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.perm_contact_calendar,
+                  color: Colors.black,
+                ))
           ],
         ),
-        backgroundColor: Colors.white,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-              // selectedItemColor: Colors.black,
-              // unselectedItemColor: Colors.green,
-              backgroundColor: Colors.white, //Color(0xFF0731aa),
-              type: BottomNavigationBarType.fixed,
-              items: [
-                BottomNavigationBarItem(
-                  icon: const Icon(
-                    Icons.home,
-                    color: Color(0xff999999),
-                  ),
-                  label: "Home",
+        drawer: Drawer(
+          child: ListView(
+            physics: const BouncingScrollPhysics(),
+            padding: EdgeInsets.zero,
+            children: <Widget>[
+              DrawerHeader(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      image: DecorationImage(
+                          image: Image.asset("assets/images/logo.jpeg").image,
+                          fit: BoxFit.cover)),
+                  child: const Opacity(
+                    opacity: 0.0,
+                    child: Text(
+                      "BYDAY JOB AFRICA",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        //color: Colors.blue,
+                      ),
+                    ),
+                  )),
+              ListTile(
+                title: const Text(
+                  "Home",
+                  style: TextStyle(fontWeight: FontWeight.w700),
                 ),
-                BottomNavigationBarItem(
-                  icon: const Icon(
-                    Icons.search,
-                    color: Color(0xff999999),
+                leading: const Icon(Icons.home, color: Colors.blueAccent),
+                onTap: () {
+                  // print("home");
+                  Navigator.pop(context);
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (context) => HomeScreen()));
+                },
+              ),
+              ListTile(
+                  title: const Text(
+                    "Send Us a mail",
+                    style: TextStyle(fontWeight: FontWeight.w700),
                   ),
-                  label: "Search",
-                ),
-                
-                BottomNavigationBarItem(
-                  icon: const Icon(
-                    Icons.calendar_month,
-                    color: Color(0xff999999),
+                  leading: const Icon(Icons.mail, color: Colors.blueAccent),
+                  onTap: () {
+                    // print("mail");
+                    // mail();
+                    Navigator.pop(context);
+                  }),
+              // ListTile(
+              //     title: Text("Send Us a message"),
+              //     leading: Icon(Icons.message, color: Colors.blueAccent),
+              //     onTap: () {
+              //       print("message");
+              //       Navigator.pop(context);
+              //     }),
+
+              ListTile(
+                  title: const Text(
+                    "Visit Us",
+                    style: TextStyle(fontWeight: FontWeight.w700),
                   ),
-                  label: "Notifcation",
-                ),
-                BottomNavigationBarItem(
-                  icon: const Icon(
-                    Icons.person,
-                    color: Color(0xff999999),
+                  leading:
+                      const Icon(Icons.chat_bubble, color: Colors.blueAccent),
+                  onTap: () {
+                    // print("visit");
+                    // mail();
+                    Navigator.pop(context);
+                    const url = "http://www.stedap1.site.live";
+                    // launchUrl(url);
+                  }),
+              ListTile(
+                  title: const Text(
+                    "Call Us",
+                    style: TextStyle(fontWeight: FontWeight.w700),
                   ),
-                  label: "Profile",
-                ),
-              ],
-              currentIndex: selectedIndex,
-              onTap: onTabTapped,
+                  leading: const Icon(Icons.call, color: Colors.blueAccent),
+                  onTap: () {
+                    // print("Call Made");
+                    // call();
+                    Navigator.pop(context);
+                  }),
+              ListTile(
+                  title: const Text(
+                    "Close",
+                    style: TextStyle(fontWeight: FontWeight.w700),
+                  ),
+                  leading:
+                      const Icon(Icons.exit_to_app, color: Colors.blueAccent),
+                  onTap: () {
+                    // print("add people");
+                    Navigator.pop(context);
+                  })
+            ],
+          ),
+          backgroundColor: Colors.white,
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          // selectedItemColor: Colors.black,
+          // unselectedItemColor: Colors.green,
+          backgroundColor: Colors.white, //Color(0xFF0731aa),
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(
+              icon: const Icon(
+                Icons.home,
+                color: Color(0xff999999),
+              ),
+              label: "Home",
             ),
-            body: screens[selectedIndex]);
+            // // BottomNavigationBarItem(
+            // //   icon: const Icon(
+            // //     Icons.search,
+            // //     color: Color(0xff999999),
+            // //   ),
+            // //   label: "Search",
+            // // ),
+            // BottomNavigationBarItem(
+            //   icon: const Icon(
+            //     Icons.calendar_month,
+            //     color: Color(0xff999999),
+            //   ),
+            //   label: "Notifcation",
+            // ),
+            BottomNavigationBarItem(
+              icon: const Icon(
+                Icons.person,
+                color: Color(0xff999999),
+              ),
+              label: "Inter Connect",
+            ),
+          ],
+          currentIndex: selectedIndex,
+          onTap: onTabTapped,
+        ),
+        body: screens[selectedIndex]);
   }
 }

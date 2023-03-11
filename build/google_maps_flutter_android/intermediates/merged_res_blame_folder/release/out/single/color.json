@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/dollarstir/Documents/Flutter/law-app/build/google_maps_flutter_android/intermediates/merged_res/release/color/common_google_signin_btn_tint.xml",
+        "source": "/Users/dollarstir/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/res/color/common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "/Users/dollarstir/Documents/Flutter/law-app/build/google_maps_flutter_android/intermediates/merged_res/release/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/dollarstir/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/dollarstir/Documents/Flutter/law-app/build/google_maps_flutter_android/intermediates/merged_res/release/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/dollarstir/.gradle/caches/transforms-3/3ff720be07735976176520d1c05fb799/transformed/jetified-play-services-base-18.0.1/res/color/common_google_signin_btn_text_dark.xml"
+    }
+]

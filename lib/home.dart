@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:Byday_Job_Africa/Signin.dart';
 import 'package:Byday_Job_Africa/hompage.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -74,7 +77,12 @@ class _HomeState extends State<Home> {
                       fixedSize: MaterialStateProperty.all(Size(300, 50)),
                       backgroundColor: MaterialStateProperty.all(Colors.white)),
                   onPressed: () {
-                    Navigator.push(context,
+
+                    var box = Hive.box('bydayjobafrica');
+                    box.put("firstrun", 1);
+                    
+
+                    Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => Homepage()));
                   },
                   child: Text(

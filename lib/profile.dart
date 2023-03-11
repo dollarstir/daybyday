@@ -1,181 +1,72 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:Byday_Job_Africa/hompage.dart';
 import 'package:Byday_Job_Africa/subscribe.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Profile extends StatefulWidget {
   String title;
-   Profile({Key ?key, required this.title}) : super(key: key);
+  Profile({Key? key, required this.title}) : super(key: key);
 
   @override
   State<Profile> createState() => _ProfileState(title: title);
 }
 
 class _ProfileState extends State<Profile> {
-
   String title;
+
+  openwhatsapp() async {
+    var whatsapp = "+233201657469";
+    var whatsappURl_android =
+        "whatsapp://send?phone=" + whatsapp + "&text=hello";
+    var whatappURL_ios = "https://wa.me/$whatsapp?text=${Uri.parse("hello")}";
+    if (Platform.isIOS) {
+      // for iOS phone only
+      if (await canLaunch(whatappURL_ios)) {
+        await launch(whatappURL_ios, forceSafariVC: false);
+      } else {
+        ScaffoldMessenger.of(context)
+            .showSnackBar(SnackBar(content: new Text("whatsapp no installed")));
+      }
+    } else {
+      // android , web
+      if (await canLaunch(whatsappURl_android)) {
+        await launch(whatsappURl_android);
+      } else {
+        // ScaffoldMessenger.of(context)
+        //     .showSnackBar(SnackBar(content: new Text("whatsapp no installed")));
+        await launch(whatsappURl_android);
+      }
+    }
+  }
+
+
+  Future<void> _makePhoneCall(String phoneNumber) async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber,
+    );
+    await launchUrl(launchUri);
+  }
   _ProfileState({required this.title});
   @override
   Widget build(BuildContext context) {
+    var devicewith = MediaQuery.of(context).size.width;
+    var deviceheight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 247, 247, 247),
       body: SingleChildScrollView(
           child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Stack(children: [
-            Positioned(
-              child: Container(
-                padding: EdgeInsets.all(8),
-                margin: EdgeInsets.all(30),
-                decoration: BoxDecoration(
-                  color: Color(0xFFc07f00),
-                  borderRadius: BorderRadius.circular(60),
-                ),
-                child: ClipRRect(
-                  clipBehavior: Clip.hardEdge,
-                  borderRadius: BorderRadius.circular(60),
-                  child: Image.asset(
-                    'assets/images/lawyer.jpeg',
-                    // height: 70,
-                    // width: 30,
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-                bottom: 2,
-                left: 110,
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                  child: Column(
-                    children: [
-                      Container(
-                        child: Text(
-                          "John Osei Kwame",
-                          style: GoogleFonts.lato(
-                              color: Colors.white, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                      Container(
-                        child: Text(title,
-                            style: GoogleFonts.lato(
-                              color: Colors.white,
-                            )),
-                      ),
-                      Row(
-                        children: [
-                          Container(
-                            child: Text("4.0",
-                                style: GoogleFonts.lato(
-                                    color: Colors.white, fontSize: 10)),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Container(
-                            child: Text("God's Love Associates",
-                                style: GoogleFonts.lato(
-                                    color: Colors.white, fontSize: 10)),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.black,
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                          offset: Offset(0, 5),
-                          color: Colors.black,
-                          blurRadius: 6),
-                    ],
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ))
-          ]),
           SizedBox(
-            height: 10,
+            height: deviceheight * 0.15,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Column(
-                children: [
-                  Container(
-                    child: Text("Experience",
-                        style: GoogleFonts.lato(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        )),
-                  ),
-                  Container(
-                    child: Text("7yrs+",
-                        style: GoogleFonts.lato(
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14)),
-                  ),
-                ],
-              ),
-              SizedBox(
-                width: 5,
-              ),
-              Column(
-                children: [
-                  Container(
-                    child: Text("Cases Won",
-                        style: GoogleFonts.lato(
-                          color: Colors.black,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                        )),
-                  ),
-                  Container(
-                    child: Text("200+",
-                        style: GoogleFonts.lato(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 14)),
-                  ),
-                ],
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Subscribe()));
-                },
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  decoration: BoxDecoration(
-                    color: Color(0xFFc07f00),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(
-                        Icons.call,
-                        color: Colors.white,
-                      ),
-                      SizedBox(
-                        width: 9,
-                      ),
-                      Text("Book Now",
-                          style: GoogleFonts.lato(
-                            color: Colors.white,
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                          ))
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 30,
-          ),
+          
+
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20),
             decoration: BoxDecoration(
@@ -194,39 +85,20 @@ class _ProfileState extends State<Profile> {
                     Padding(
                       padding: EdgeInsets.all(10),
                       child: Text(
-                        "About Lawyer",
+                        "Connect with Us",
                         style: GoogleFonts.lato(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 30),
                       ),
                     ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 2),
-                      child: Text(
-                        "General",
-                        style: GoogleFonts.lato(
-                          color: Colors.green,
-                          fontSize: 11,
-                        ),
-                      ),
-                      // height: 20,
-                      // width: ,
-                      // width: 2,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 181, 248, 215),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
+                    
                   ],
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                   child: Text(
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+                    "You can reach us via sms ,phone call  or whatsap  by clicking on the preferred option below",
                     style: GoogleFonts.lato(
                         color: Colors.black,
                         // fontWeight: FontWeight.bold,
@@ -236,48 +108,87 @@ class _ProfileState extends State<Profile> {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.symmetric(horizontal: 5, vertical: 30),
-            child: Text("Send Message"),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            margin: EdgeInsets.symmetric(horizontal: 20),
-            decoration: BoxDecoration(
-              boxShadow: <BoxShadow>[
-                BoxShadow(
-                    offset: Offset(0, 0), color: Colors.black26, blurRadius: 5),
-              ],
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.white,
-            ),
-            child: Center(
-              child: TextField(
-                decoration: InputDecoration(
-                    hintText: 'Message', border: InputBorder.none),
-              ),
-            ),
-          ),
+
           SizedBox(
-            height: 20,
+            height: 30,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
-            child: ElevatedButton(
-                style: ButtonStyle(
-                    // padding: MaterialStateProperty.all(EdgeInsets.only(left: 30)),
-                    fixedSize: MaterialStateProperty.all(Size(350, 50)),
-                    backgroundColor:
-                        MaterialStateProperty.all(Color(0xFFc07f00))),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Homepage()));
+          
+           SizedBox(
+            height: deviceheight * 0.08,
+          ),
+          
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              GestureDetector(
+                onTap: (){
+                 _makePhoneCall('+233201657469');
                 },
-                child: Text(
-                  "Submit",
-                  style: GoogleFonts.lato(color: Colors.white),
-                )),
-          )
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFc07f00),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(
+                        Icons.call,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 9,
+                      ),
+                      Text("Call Now",
+                          style: GoogleFonts.lato(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ))
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              GestureDetector(
+                onTap: () {
+                  openwhatsapp();
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  decoration: BoxDecoration(
+                    color: Color(0xFFc07f00),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(
+                        Icons.message,
+                        color: Colors.white,
+                      ),
+                      SizedBox(
+                        width: 9,
+                      ),
+                      Text("Whatsapp Us",
+                          style: GoogleFonts.lato(
+                            color: Colors.white,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ))
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+          
+          
+          
+          
         ],
       )),
     );

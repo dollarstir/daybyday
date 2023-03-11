@@ -1,0 +1,227 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.law_app"
+4    android:versionCode="4001"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="20"
+8-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="31" />
+9-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml
+10
+11    <queries>
+11-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:3:6-14:15
+12
+13        <!-- If your app checks for SMS support -->
+14        <intent>
+14-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:5:9-8:18
+15            <action android:name="android.intent.action.VIEW" />
+15-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:6:13-65
+15-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:6:21-62
+16
+17            <data android:scheme="sms" />
+17-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:7:13-42
+17-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:7:19-39
+18        </intent>
+19        <!-- If your app checks for call support -->
+20        <intent>
+20-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:10:9-13:18
+21            <action android:name="android.intent.action.VIEW" />
+21-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:6:13-65
+21-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:6:21-62
+22
+23            <data android:scheme="tel" />
+23-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:7:13-42
+23-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:7:19-39
+24        </intent>
+25        <!-- Needs to be explicitly declared on Android R+ -->
+26        <package android:name="com.google.android.apps.maps" />
+26-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:33:9-64
+26-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:33:18-61
+27    </queries>
+28    <!-- internet permission -->
+29    <uses-permission android:name="android.permission.INTERNET" />
+29-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:16:5-67
+29-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:16:22-64
+30    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+30-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:18:5-81
+30-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:18:22-78
+31    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+31-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:19:5-79
+31-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:19:22-76
+32    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- Include required permissions for Google Maps API to run. -->
+32-->[:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-77
+32-->[:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-74
+33    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+33-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:23:5-79
+33-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:23:22-76
+34
+35    <uses-feature
+35-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:26:5-28:35
+36        android:glEsVersion="0x00020000"
+36-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:27:9-41
+37        android:required="true" />
+37-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:28:9-32
+38
+39    <permission
+39-->[androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
+40        android:name="com.example.law_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+40-->[androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
+41        android:protectionLevel="signature" />
+41-->[androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
+42
+43    <uses-permission android:name="com.example.law_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+43-->[androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
+43-->[androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
+44
+45    <application
+46        android:name="android.app.Application"
+46-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:23:9-42
+47        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+47-->[androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
+48        android:icon="@mipmap/ic_launcher"
+48-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:24:9-43
+49        android:label="ByDay Job Africa" >
+49-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:22:9-41
+50
+51        <!--
+52             <service
+53            android:name=".MyLocationService"
+54            android:foregroundServiceType="location"
+55            ... />
+56        -->
+57
+58        <activity
+58-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:31:9-51:20
+59            android:name="com.example.law_app.MainActivity"
+59-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:32:13-41
+60            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+60-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:36:13-163
+61            android:exported="true"
+61-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:33:13-36
+62            android:hardwareAccelerated="true"
+62-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:37:13-47
+63            android:launchMode="singleTop"
+63-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:34:13-43
+64            android:theme="@style/LaunchTheme"
+64-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:35:13-47
+65            android:windowSoftInputMode="adjustResize" >
+65-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:38:13-55
+66
+67            <!--
+68                 Specifies an Android theme to apply to this Activity as soon as
+69                 the Android process has started. This theme is visible to the user
+70                 while the Flutter UI initializes. After that, this theme continues
+71                 to determine the Window background behind the Flutter UI.
+72            -->
+73            <meta-data
+73-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:43:13-46:17
+74                android:name="io.flutter.embedding.android.NormalTheme"
+74-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:44:15-70
+75                android:resource="@style/NormalTheme" />
+75-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:45:15-52
+76
+77            <intent-filter>
+77-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:47:13-50:29
+78                <action android:name="android.intent.action.MAIN" />
+78-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:48:17-68
+78-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:48:25-66
+79
+80                <category android:name="android.intent.category.LAUNCHER" />
+80-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:49:17-76
+80-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:49:27-74
+81            </intent-filter>
+82        </activity>
+83        <!--
+84             Don't delete the meta-data below.
+85             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+86        -->
+87        <meta-data
+87-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:54:9-56:33
+88            android:name="flutterEmbedding"
+88-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:55:13-44
+89            android:value="2" />
+89-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:56:13-30
+90        <meta-data
+90-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:58:9-59:73
+91            android:name="com.google.android.geo.API_KEY"
+91-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:58:20-65
+92            android:value="AIzaSyALxSCUstN5BisWSOBPflpKf1x3XmnRSyo" />
+92-->/Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:59:16-71
+93
+94        <service
+94-->[:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:9-16:56
+95            android:name="com.baseflow.geolocator.GeolocatorLocationService"
+95-->[:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-77
+96            android:enabled="true"
+96-->[:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-35
+97            android:exported="false"
+97-->[:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-37
+98            android:foregroundServiceType="location" />
+98-->[:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:16:13-53
+99
+100        <provider
+100-->[:image_picker_android] /Users/dollarstir/Documents/Flutter/law-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-18:20
+101            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+101-->[:image_picker_android] /Users/dollarstir/Documents/Flutter/law-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-82
+102            android:authorities="com.example.law_app.flutter.image_provider"
+102-->[:image_picker_android] /Users/dollarstir/Documents/Flutter/law-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-74
+103            android:exported="false"
+103-->[:image_picker_android] /Users/dollarstir/Documents/Flutter/law-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-37
+104            android:grantUriPermissions="true" >
+104-->[:image_picker_android] /Users/dollarstir/Documents/Flutter/law-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-47
+105            <meta-data
+105-->[:image_picker_android] /Users/dollarstir/Documents/Flutter/law-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-17:75
+106                android:name="android.support.FILE_PROVIDER_PATHS"
+106-->[:image_picker_android] /Users/dollarstir/Documents/Flutter/law-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:16:17-67
+107                android:resource="@xml/flutter_image_picker_file_paths" />
+107-->[:image_picker_android] /Users/dollarstir/Documents/Flutter/law-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:17:17-72
+108        </provider>
+109
+110        <activity
+110-->[:url_launcher_android] /Users/dollarstir/Documents/Flutter/law-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:10:9-13:74
+111            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+111-->[:url_launcher_android] /Users/dollarstir/Documents/Flutter/law-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-74
+112            android:exported="false"
+112-->[:url_launcher_android] /Users/dollarstir/Documents/Flutter/law-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:13-37
+113            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" /> <!-- Needs to be explicitly declared on P+ -->
+113-->[:url_launcher_android] /Users/dollarstir/Documents/Flutter/law-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-71
+114        <uses-library
+114-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:39:9-41:40
+115            android:name="org.apache.http.legacy"
+115-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:40:13-50
+116            android:required="false" />
+116-->[com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:41:13-37
+117
+118        <activity
+118-->[com.google.android.gms:play-services-base:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/f568b3e0e4b3738147ed358a145ad2d6/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:9-22:45
+119            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+119-->[com.google.android.gms:play-services-base:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/f568b3e0e4b3738147ed358a145ad2d6/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:20:19-85
+120            android:exported="false"
+120-->[com.google.android.gms:play-services-base:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/f568b3e0e4b3738147ed358a145ad2d6/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:22:19-43
+121            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+121-->[com.google.android.gms:play-services-base:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/f568b3e0e4b3738147ed358a145ad2d6/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:21:19-78
+122
+123        <meta-data
+123-->[com.google.android.gms:play-services-basement:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/6b0daa5fb4c2eb7e8b55778df9b972f6/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+124            android:name="com.google.android.gms.version"
+124-->[com.google.android.gms:play-services-basement:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/6b0daa5fb4c2eb7e8b55778df9b972f6/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+125            android:value="@integer/google_play_services_version" />
+125-->[com.google.android.gms:play-services-basement:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/6b0daa5fb4c2eb7e8b55778df9b972f6/transformed/jetified-play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+126
+127        <uses-library
+127-->[androidx.window:window:1.0.0-beta04] /Users/dollarstir/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+128            android:name="androidx.window.extensions"
+128-->[androidx.window:window:1.0.0-beta04] /Users/dollarstir/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+129            android:required="false" />
+129-->[androidx.window:window:1.0.0-beta04] /Users/dollarstir/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+130        <uses-library
+130-->[androidx.window:window:1.0.0-beta04] /Users/dollarstir/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+131            android:name="androidx.window.sidecar"
+131-->[androidx.window:window:1.0.0-beta04] /Users/dollarstir/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+132            android:required="false" />
+132-->[androidx.window:window:1.0.0-beta04] /Users/dollarstir/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+133    </application>
+134
+135</manifest>

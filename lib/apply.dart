@@ -7,6 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:geolocator/geolocator.dart';
 // import 'package:http/http.dart';
 
 class Apply extends StatefulWidget {
@@ -25,16 +26,18 @@ class _ApplyState extends State<Apply> {
   var _image;
 
 
- String uploadEndPoint ='http://192.168.50.145/daybyday/upload.php';
+ String uploadEndPoint ='https://e-currex.com/bydayjob/upload.php';
   String? base64Image;
   File? tmpFile;
   String status = '';
-  String errMessage = 'Error Uploading Image';
+  String errMessage = 'Error Submitting form';
   var _name = TextEditingController();
   var _phone = TextEditingController();
   var _location = TextEditingController();
   var _age = TextEditingController();
   var _idcard = TextEditingController();
+
+  
   
 
   Future getImage() async {
@@ -44,6 +47,95 @@ class _ApplyState extends State<Apply> {
       tmpFile = _image;
       base64Image = base64Encode(_image.readAsBytesSync());
     });
+  }
+
+
+
+ 
+  
+
+
+  // getting users location 
+
+  String _locationMessage = "";
+
+  // void _getCurrentLocation() async {
+  //   final position = await Geolocator.getCurrentPosition(
+  //       desiredAccuracy: LocationAccuracy.high);
+  //   setState(() {
+  //     _locationMessage =
+  //         "Latitude: ${position.latitude}, Longitude: ${position.longitude}";
+  //   });
+  //   // TODO: Send the location to your desired endpoint
+  //   print(_locationMessage);
+  // }
+ final GeolocatorPlatform _geolocatorPlatform = GeolocatorPlatform.instance;
+
+  Future<void> _getCurrentPosition() async {
+    final hasPermission = await _handlePermission();
+
+    if (!hasPermission) {
+      return;
+    }
+
+    final position =  await await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);   
+    setState(() {
+      _locationMessage =
+          "${position.latitude},${position.longitude}";
+    });
+  }
+
+  Future<bool> _handlePermission() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    // Test if location services are enabled.
+    serviceEnabled = await _geolocatorPlatform.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      // Location services are not enabled don't continue
+      // accessing the position and request users of the
+      // App to enable the location services.
+      
+
+      return false;
+    }
+
+    permission = await _geolocatorPlatform.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await _geolocatorPlatform.requestPermission();
+      if (permission == LocationPermission.denied) {
+        // Permissions are denied, next time you could try
+        // requesting permissions again (this is also where
+        // Android's shouldShowRequestPermissionRationale
+        // returned true. According to Android guidelines
+        // your App should show an explanatory UI now.
+        // _updatePositionList(
+        //   _PositionItemType.log,
+        //   _kPermissionDeniedMessage,
+        // );
+
+        return false;
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      // Permissions are denied forever, handle appropriately.
+      // // _updatePositionList(
+      // //   _PositionItemType.log,
+      // //   _kPermissionDeniedForeverMessage,
+      // );
+
+      return false;
+    }
+
+    // When we reach here, permissions are granted and we can
+    // continue accessing the position of the device.
+    // _updatePositionList(
+    //   _PositionItemType.log,
+    //   _kPermissionGrantedMessage,
+    // );
+    return true;
   }
 
 
@@ -65,25 +157,62 @@ class _ApplyState extends State<Apply> {
     "age": _age.text,
     "idcard": _idcard.text,
     'job': title,
+    'giolocation': _locationMessage,
     
 
   }).then((result) {
+    print(result.body);
     setStatus(result.statusCode == 200 ? result.body : errMessage);
   }).catchError((error) {
-    setStatus(error);
+    setStatus(error.toString());
   });
 }
 
+Future senddata(String fileName)async {
+   
+    var userlink = "http://bydayjob.tuceehub.org/upload.php";
+    var response = await http.post(
+      Uri.parse(userlink),
+      body: {
+        "image": base64Image,
+    "picname": fileName,
+    "name": _name.text,
+    "phone": _phone.text,
+    "location": _location.text,
+    "age": _age.text,
+    "idcard": _idcard.text,
+    'job': title,
+    'giolocation': _locationMessage,
+      },
+    );
+    var result = jsonDecode(response.body);
+    return result;
+    print(result);
+  }
 
 
-startUpload() {
-    setStatus('Uploading Image...');
+
+startUpload() async{
+    setStatus('Uploading Data...');
     if (null == tmpFile) {
       setStatus(errMessage);
       return;
     }
     String fileName = tmpFile!.path.split('/').last;
-    upload(fileName);
+    // _getCurrentPosition();
+    
+    await upload(fileName);
+    // await senddata(fileName);
+
+  }
+
+
+
+
+  @override
+  void initState() {
+    super.initState();
+   _getCurrentPosition();
   }
 
   _ApplyState({required this.title, required this.pic});
@@ -551,7 +680,10 @@ startUpload() {
                     fixedSize: MaterialStateProperty.all(Size(350, 50)),
                     backgroundColor:
                         MaterialStateProperty.all(Color(0xFFc07f00))),
-                onPressed:startUpload,
+                onPressed:()async{
+                  await startUpload();
+
+                },
                 child: Text(
                   "Submit",
                   style: GoogleFonts.lato(color: Colors.white),

@@ -41,6 +41,12 @@ dependencies:
   hive:
   hive_flutter:
   animated_splash_screen:
+  url_launcher: ^6.0.9
+  geolocator:
+  google_maps_flutter:
+  polyline:
+  flutter_polyline_points:
+  location:
 
 dev_dependencies:
   flutter_test:

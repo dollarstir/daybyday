@@ -5,6 +5,7 @@ import 'package:Byday_Job_Africa/categoryModel.dart';
 import 'package:Byday_Job_Africa/lawyerCard.dart';
 import 'package:Byday_Job_Africa/notification.dart';
 import 'package:Byday_Job_Africa/profile.dart';
+import './map.dart';
 import 'package:Byday_Job_Africa/search.dart';
 import 'package:Byday_Job_Africa/profile.dart';
 
@@ -63,10 +64,14 @@ class _HomepageState extends State<Homepage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Container(
-              padding: EdgeInsets.all(15),
-              child: Text("Hello User"),
+            // Container(
+            //   padding: EdgeInsets.all(15),
+            //   child: Text("Hello User"),
+            // ),
+            SizedBox(
+              height: 30,
             ),
+            
             Container(
               padding: EdgeInsets.only(left: 15, bottom: 15),
               child: Text("Let's help you Work Abroad",
@@ -356,123 +361,126 @@ class _HomepageState extends State<Homepage> {
       )),
       Profile(
         title: "Welcome",
-      )
+      ),
+      // '5.631560,-0.144900','5.545230,-0.250080'
+      MapScreen(),
+    
     ];
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 247, 247, 247),
-        appBar: AppBar(
-          elevation: 0,
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Color.fromARGB(255, 247, 247, 247),
-          actions: [
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.notifications,
-                  color: Colors.black,
-                )),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.perm_contact_calendar,
-                  color: Colors.black,
-                ))
-          ],
-        ),
-        drawer: Drawer(
-          child: ListView(
-            physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.zero,
-            children: <Widget>[
-              DrawerHeader(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      image: DecorationImage(
-                          image: Image.asset("assets/images/logo.jpeg").image,
-                          fit: BoxFit.cover)),
-                  child: const Opacity(
-                    opacity: 0.0,
-                    child: Text(
-                      "BYDAY JOB AFRICA",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        //color: Colors.blue,
-                      ),
-                    ),
-                  )),
-              ListTile(
-                title: const Text(
-                  "Home",
-                  style: TextStyle(fontWeight: FontWeight.w700),
-                ),
-                leading: const Icon(Icons.home, color: Colors.blueAccent),
-                onTap: () {
-                  // print("home");
-                  Navigator.pop(context);
-                  // Navigator.push(context,
-                  //     MaterialPageRoute(builder: (context) => HomeScreen()));
-                },
-              ),
-              ListTile(
-                  title: const Text(
-                    "Send Us a mail",
-                    style: TextStyle(fontWeight: FontWeight.w700),
-                  ),
-                  leading: const Icon(Icons.mail, color: Colors.blueAccent),
-                  onTap: () {
-                    // print("mail");
-                    // mail();
-                    Navigator.pop(context);
-                  }),
-              // ListTile(
-              //     title: Text("Send Us a message"),
-              //     leading: Icon(Icons.message, color: Colors.blueAccent),
-              //     onTap: () {
-              //       print("message");
-              //       Navigator.pop(context);
-              //     }),
+        // appBar: AppBar(
+        //   elevation: 0,
+        //   iconTheme: IconThemeData(color: Colors.black),
+        //   backgroundColor: Color.fromARGB(255, 247, 247, 247),
+        //   actions: [
+        //     IconButton(
+        //         onPressed: () {},
+        //         icon: Icon(
+        //           Icons.notifications,
+        //           color: Colors.black,
+        //         )),
+        //     IconButton(
+        //         onPressed: () {},
+        //         icon: Icon(
+        //           Icons.perm_contact_calendar,
+        //           color: Colors.black,
+        //         ))
+        //   ],
+        // ),
+        // drawer: Drawer(
+        //   child: ListView(
+        //     physics: const BouncingScrollPhysics(),
+        //     padding: EdgeInsets.zero,
+        //     children: <Widget>[
+        //       DrawerHeader(
+        //           decoration: BoxDecoration(
+        //               color: Colors.white,
+        //               image: DecorationImage(
+        //                   image: Image.asset("assets/images/logo.jpeg").image,
+        //                   fit: BoxFit.cover)),
+        //           child: const Opacity(
+        //             opacity: 0.0,
+        //             child: Text(
+        //               "BYDAY JOB AFRICA",
+        //               style: TextStyle(
+        //                 fontWeight: FontWeight.bold,
+        //                 fontSize: 20,
+        //                 //color: Colors.blue,
+        //               ),
+        //             ),
+        //           )),
+        //       ListTile(
+        //         title: const Text(
+        //           "Home",
+        //           style: TextStyle(fontWeight: FontWeight.w700),
+        //         ),
+        //         leading: const Icon(Icons.home, color: Colors.blueAccent),
+        //         onTap: () {
+        //           // print("home");
+        //           Navigator.pop(context);
+        //           // Navigator.push(context,
+        //           //     MaterialPageRoute(builder: (context) => HomeScreen()));
+        //         },
+        //       ),
+        //       ListTile(
+        //           title: const Text(
+        //             "Send Us a mail",
+        //             style: TextStyle(fontWeight: FontWeight.w700),
+        //           ),
+        //           leading: const Icon(Icons.mail, color: Colors.blueAccent),
+        //           onTap: () {
+        //             // print("mail");
+        //             // mail();
+        //             Navigator.pop(context);
+        //           }),
+        //       // ListTile(
+        //       //     title: Text("Send Us a message"),
+        //       //     leading: Icon(Icons.message, color: Colors.blueAccent),
+        //       //     onTap: () {
+        //       //       print("message");
+        //       //       Navigator.pop(context);
+        //       //     }),
 
-              ListTile(
-                  title: const Text(
-                    "Visit Us",
-                    style: TextStyle(fontWeight: FontWeight.w700),
-                  ),
-                  leading:
-                      const Icon(Icons.chat_bubble, color: Colors.blueAccent),
-                  onTap: () {
-                    // print("visit");
-                    // mail();
-                    Navigator.pop(context);
-                    const url = "http://www.stedap1.site.live";
-                    // launchUrl(url);
-                  }),
-              ListTile(
-                  title: const Text(
-                    "Call Us",
-                    style: TextStyle(fontWeight: FontWeight.w700),
-                  ),
-                  leading: const Icon(Icons.call, color: Colors.blueAccent),
-                  onTap: () {
-                    // print("Call Made");
-                    // call();
-                    Navigator.pop(context);
-                  }),
-              ListTile(
-                  title: const Text(
-                    "Close",
-                    style: TextStyle(fontWeight: FontWeight.w700),
-                  ),
-                  leading:
-                      const Icon(Icons.exit_to_app, color: Colors.blueAccent),
-                  onTap: () {
-                    // print("add people");
-                    Navigator.pop(context);
-                  })
-            ],
-          ),
-          backgroundColor: Colors.white,
-        ),
+        //       ListTile(
+        //           title: const Text(
+        //             "Visit Us",
+        //             style: TextStyle(fontWeight: FontWeight.w700),
+        //           ),
+        //           leading:
+        //               const Icon(Icons.chat_bubble, color: Colors.blueAccent),
+        //           onTap: () {
+        //             // print("visit");
+        //             // mail();
+        //             Navigator.pop(context);
+        //             const url = "http://www.stedap1.site.live";
+        //             // launchUrl(url);
+        //           }),
+        //       ListTile(
+        //           title: const Text(
+        //             "Call Us",
+        //             style: TextStyle(fontWeight: FontWeight.w700),
+        //           ),
+        //           leading: const Icon(Icons.call, color: Colors.blueAccent),
+        //           onTap: () {
+        //             // print("Call Made");
+        //             // call();
+        //             Navigator.pop(context);
+        //           }),
+        //       ListTile(
+        //           title: const Text(
+        //             "Close",
+        //             style: TextStyle(fontWeight: FontWeight.w700),
+        //           ),
+        //           leading:
+        //               const Icon(Icons.exit_to_app, color: Colors.blueAccent),
+        //           onTap: () {
+        //             // print("add people");
+        //             Navigator.pop(context);
+        //           })
+        //     ],
+        //   ),
+        //   backgroundColor: Colors.white,
+        // ),
         bottomNavigationBar: BottomNavigationBar(
           // selectedItemColor: Colors.black,
           // unselectedItemColor: Colors.green,
@@ -506,6 +514,14 @@ class _HomepageState extends State<Homepage> {
                 color: Color(0xff999999),
               ),
               label: "Inter Connect",
+            ),
+
+            BottomNavigationBarItem(
+              icon: const Icon(
+                Icons.map,
+                color: Color(0xff999999),
+              ),
+              label: "Map",
             ),
           ],
           currentIndex: selectedIndex,

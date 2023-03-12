@@ -5,9 +5,11 @@ import 'package:Byday_Job_Africa/categoryModel.dart';
 import 'package:Byday_Job_Africa/lawyerCard.dart';
 import 'package:Byday_Job_Africa/notification.dart';
 import 'package:Byday_Job_Africa/profile.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import './map.dart';
 import 'package:Byday_Job_Africa/search.dart';
 import 'package:Byday_Job_Africa/profile.dart';
+import 'package:geolocator/geolocator.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -363,7 +365,9 @@ class _HomepageState extends State<Homepage> {
         title: "Welcome",
       ),
       // '5.631560,-0.144900','5.545230,-0.250080'
-      MapScreen(),
+      MapScreen(
+        // nearestOffice:LatLng(30.396770,-97.922780
+        ),
     
     ];
     return Scaffold(

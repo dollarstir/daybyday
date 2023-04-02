@@ -47,6 +47,10 @@ dependencies:
   polyline:
   flutter_polyline_points:
   location:
+  # google_maps_webservice:
+  # flutter_google_places:
+  google_places_flutter: ^2.0.5
+  
 
 dev_dependencies:
   flutter_test:

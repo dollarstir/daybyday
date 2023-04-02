@@ -1,18 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.law_app">
-     <queries>
-        <!-- If your app checks for SMS support -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="sms" />
-        </intent>
-        <!-- If your app checks for call support -->
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <data android:scheme="tel" />
-        </intent>
-    </queries>
-    <!-- internet permission -->
+    package="com.bydayjob.bydayjobafrica">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -21,15 +9,9 @@
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
 
    <application
-        android:label="ByDay Job Africa"
+        android:label="Byday Job Africa"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-
-        <!-- <service
-            android:name=".MyLocationService"
-            android:foregroundServiceType="location"
-            ... /> -->
-
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -59,6 +41,5 @@
 
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyAy9xR_ioh6A7CZdMDsSaVm0xkaBhTaMU8"/>
-
     </application>
 </manifest>

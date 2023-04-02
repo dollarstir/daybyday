@@ -49,7 +49,7 @@ class LawyerCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
             child: Image.asset(
-              this.image??'assets/images/1.jpg',
+              image, //??'assets/images/1.jpg',
               height: 70,
               width: 70,
             ),

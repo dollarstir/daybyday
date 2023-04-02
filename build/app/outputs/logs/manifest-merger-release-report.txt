@@ -1,12 +1,14 @@
 -- Merging decision tree log ---
 application
-INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:21:4-61:19
+INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:11:4-44:19
 MERGED from [:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-17:19
 MERGED from [:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:5-17:19
 MERGED from [:image_picker_android] /Users/dollarstir/Documents/Flutter/law-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-19:19
 MERGED from [:image_picker_android] /Users/dollarstir/Documents/Flutter/law-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-19:19
 MERGED from [:url_launcher_android] /Users/dollarstir/Documents/Flutter/law-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-14:19
 MERGED from [:url_launcher_android] /Users/dollarstir/Documents/Flutter/law-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-14:19
+MERGED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:12:5-18:19
+MERGED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:12:5-18:19
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:36:5-42:19
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:36:5-42:19
 MERGED from [com.google.android.gms:play-services-location:21.0.1] /Users/dollarstir/.gradle/caches/transforms-3/d42a1919f41e604a4c806aaaeba6bf29/transformed/jetified-play-services-location-21.0.1/AndroidManifest.xml:7:5-20
@@ -26,23 +28,24 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/doll
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:28:18-86
 	android:label
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:22:9-41
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:12:9-41
 	android:icon
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:24:9-43
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:14:9-43
 	android:name
 		INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:23:9-42
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:13:9-42
 manifest
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-62:12
-INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-62:12
-INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-62:12
-INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-62:12
+ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-45:12
+INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-45:12
+INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-45:12
+INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-45:12
 MERGED from [:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-19:12
 MERGED from [:google_maps_flutter_android] /Users/dollarstir/Documents/Flutter/law-app/build/google_maps_flutter_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [:image_picker_android] /Users/dollarstir/Documents/Flutter/law-app/build/image_picker_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-21:12
 MERGED from [:flutter_plugin_android_lifecycle] /Users/dollarstir/Documents/Flutter/law-app/build/flutter_plugin_android_lifecycle/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
 MERGED from [:url_launcher_android] /Users/dollarstir/Documents/Flutter/law-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-16:12
 MERGED from [:path_provider_android] /Users/dollarstir/Documents/Flutter/law-app/build/path_provider_android/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-9:12
+MERGED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:2:1-20:12
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:17:1-44:12
 MERGED from [com.google.android.gms:play-services-location:21.0.1] /Users/dollarstir/.gradle/caches/transforms-3/d42a1919f41e604a4c806aaaeba6bf29/transformed/jetified-play-services-location-21.0.1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/f568b3e0e4b3738147ed358a145ad2d6/transformed/jetified-play-services-base-18.1.0/AndroidManifest.xml:16:1-24:12
@@ -55,9 +58,9 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.5.1] /Users/dollarstir/.gr
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.5.1] /Users/dollarstir/.gradle/caches/transforms-3/572d2a7c9eb5efde34d5fcfd36b0f0e3/transformed/jetified-lifecycle-viewmodel-savedstate-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/dollarstir/.gradle/caches/transforms-3/246793f755122fe14a5802655438cb75/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] /Users/dollarstir/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.core:core-ktx:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/efb7ecd2cec4a8f801c52ab663aebcf9/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/dollarstir/.gradle/caches/transforms-3/045d2e69ed718df502093495707de7d0/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.0.0] /Users/dollarstir/.gradle/caches/transforms-3/d411e96186971239cc9320701a4aa95b/transformed/customview-1.0.0/AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.core:core-ktx:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/efb7ecd2cec4a8f801c52ab663aebcf9/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:17:1-30:12
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/dollarstir/.gradle/caches/transforms-3/1a84149c74c401c9e5ff7324425946dc/transformed/exifinterface-1.3.3/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/dollarstir/.gradle/caches/transforms-3/c6290d38a27dcf8d064fa9cefcb89071/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
@@ -68,53 +71,51 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/dollarstir/.gra
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.5.1] /Users/dollarstir/.gradle/caches/transforms-3/a9dbf56cdd9bfea41d83101b051211a3/transformed/lifecycle-livedata-core-2.5.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/dollarstir/.gradle/caches/transforms-3/b0ed3bc1190a335fc620be73cef0fa31/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.annotation:annotation-experimental:1.3.0] /Users/dollarstir/.gradle/caches/transforms-3/d554ead6601b2f9532bb7762be473019/transformed/jetified-annotation-experimental-1.3.0/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-62:12
-INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-62:12
-INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-62:12
+INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-45:12
+INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-45:12
+INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-45:12
 	package
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:2:5-34
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:2:5-42
 		INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-62:12
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-45:12
 		INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-62:12
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:1-45:12
 		INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:1:11-69
-queries
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:3:6-14:15
-MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:30:5-34:15
-MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:30:5-34:15
-intent#action:name:android.intent.action.VIEW+data:scheme:sms
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:5:9-8:18
-action#android.intent.action.VIEW
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:6:13-65
-	android:name
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:6:21-62
-data
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:7:13-42
-	android:scheme
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:7:19-39
-intent#action:name:android.intent.action.VIEW+data:scheme:tel
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:10:9-13:18
 uses-permission#android.permission.INTERNET
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:16:5-67
+ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:4:5-67
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:24:5-67
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:16:22-64
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:4:22-64
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:18:5-81
+ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:6:5-81
+MERGED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-81
+MERGED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-81
 	android:name
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:18:22-78
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:6:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:19:5-79
+ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:7:5-79
+MERGED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-79
+MERGED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:10:5-79
 	android:name
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:19:22-76
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:8:5-77
+MERGED from [:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-77
+MERGED from [:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-77
+	android:name
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:8:22-74
+uses-permission#android.permission.ACCESS_BACKGROUND_LOCATION
+ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:9:5-84
+	android:name
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:9:22-82
 uses-sdk
 INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml
@@ -131,6 +132,8 @@ MERGED from [:url_launcher_android] /Users/dollarstir/Documents/Flutter/law-app/
 MERGED from [:url_launcher_android] /Users/dollarstir/Documents/Flutter/law-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] /Users/dollarstir/Documents/Flutter/law-app/build/path_provider_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [:path_provider_android] /Users/dollarstir/Documents/Flutter/law-app/build/path_provider_android/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
+MERGED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-location:21.0.1] /Users/dollarstir/.gradle/caches/transforms-3/d42a1919f41e604a4c806aaaeba6bf29/transformed/jetified-play-services-location-21.0.1/AndroidManifest.xml:5:5-44
@@ -155,12 +158,12 @@ MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/dollarstir/.gradle
 MERGED from [androidx.window:window-java:1.0.0-beta04] /Users/dollarstir/.gradle/caches/transforms-3/246793f755122fe14a5802655438cb75/transformed/jetified-window-java-1.0.0-beta04/AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window:1.0.0-beta04] /Users/dollarstir/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.window:window:1.0.0-beta04] /Users/dollarstir/.gradle/caches/transforms-3/49bc944d29f70d45aa5add8e43e3247e/transformed/jetified-window-1.0.0-beta04/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/efb7ecd2cec4a8f801c52ab663aebcf9/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/efb7ecd2cec4a8f801c52ab663aebcf9/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/dollarstir/.gradle/caches/transforms-3/045d2e69ed718df502093495707de7d0/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/dollarstir/.gradle/caches/transforms-3/045d2e69ed718df502093495707de7d0/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] /Users/dollarstir/.gradle/caches/transforms-3/d411e96186971239cc9320701a4aa95b/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] /Users/dollarstir/.gradle/caches/transforms-3/d411e96186971239cc9320701a4aa95b/transformed/customview-1.0.0/AndroidManifest.xml:20:5-44
-MERGED from [androidx.core:core-ktx:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/efb7ecd2cec4a8f801c52ab663aebcf9/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:5:5-44
-MERGED from [androidx.core:core-ktx:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/efb7ecd2cec4a8f801c52ab663aebcf9/transformed/jetified-core-ktx-1.9.0/AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.exifinterface:exifinterface:1.3.3] /Users/dollarstir/.gradle/caches/transforms-3/1a84149c74c401c9e5ff7324425946dc/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
@@ -191,54 +194,50 @@ INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/A
 		INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml
 		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml
-activity#com.example.law_app.MainActivity
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:31:9-51:20
+activity#com.bydayjob.bydayjobafrica.MainActivity
+ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:15:9-35:20
 	android:launchMode
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:34:13-43
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:18:13-43
 	android:hardwareAccelerated
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:37:13-47
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:21:13-47
 	android:windowSoftInputMode
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:38:13-55
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:22:13-55
 	android:exported
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:33:13-36
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:17:13-36
 	android:configChanges
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:36:13-163
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:20:13-163
 	android:theme
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:35:13-47
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:19:13-47
 	android:name
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:32:13-41
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:16:13-41
 meta-data#io.flutter.embedding.android.NormalTheme
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:43:13-46:17
+ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:27:13-30:17
 	android:resource
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:45:15-52
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:29:15-52
 	android:name
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:44:15-70
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:28:15-70
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:47:13-50:29
+ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:31:13-34:29
 action#android.intent.action.MAIN
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:48:17-68
+ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:32:17-68
 	android:name
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:48:25-66
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:32:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:49:17-76
+ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:33:17-76
 	android:name
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:49:27-74
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:33:27-74
 meta-data#flutterEmbedding
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:54:9-56:33
+ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:38:9-40:33
 	android:value
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:56:13-30
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:40:13-30
 	android:name
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:55:13-44
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:39:13-44
 meta-data#com.google.android.geo.API_KEY
-ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:58:9-59:73
+ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:42:9-43:73
 	android:value
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:59:16-71
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:43:16-71
 	android:name
-		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:58:20-65
-uses-permission#android.permission.FOREGROUND_SERVICE
-ADDED from [:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:5-77
-	android:name
-		ADDED from [:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:9:22-74
+		ADDED from /Users/dollarstir/Documents/Flutter/law-app/android/app/src/main/AndroidManifest.xml:42:20-65
 service#com.baseflow.geolocator.GeolocatorLocationService
 ADDED from [:geolocator_android] /Users/dollarstir/Documents/Flutter/law-app/build/geolocator_android/intermediates/merged_manifest/release/AndroidManifest.xml:12:9-16:56
 	android:enabled
@@ -273,6 +272,16 @@ ADDED from [:url_launcher_android] /Users/dollarstir/Documents/Flutter/law-app/b
 		ADDED from [:url_launcher_android] /Users/dollarstir/Documents/Flutter/law-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:13:13-71
 	android:name
 		ADDED from [:url_launcher_android] /Users/dollarstir/Documents/Flutter/law-app/build/url_launcher_android/intermediates/merged_manifest/release/AndroidManifest.xml:11:13-74
+service#com.lyokone.location.FlutterLocationService
+ADDED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:13:9-17:56
+	android:enabled
+		ADDED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:15:13-35
+	android:exported
+		ADDED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:16:13-37
+	android:foregroundServiceType
+		ADDED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:17:13-53
+	android:name
+		ADDED from [:location] /Users/dollarstir/Documents/Flutter/law-app/build/location/intermediates/merged_manifest/release/AndroidManifest.xml:14:13-71
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:23:5-79
 	android:name
@@ -283,6 +292,8 @@ ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/
 		ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:27:9-41
 	android:required
 		ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:28:9-32
+queries
+ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:30:5-34:15
 package#com.google.android.apps.maps
 ADDED from [com.google.android.gms:play-services-maps:18.1.0] /Users/dollarstir/.gradle/caches/transforms-3/e201e9ad108cf5dd9bf454f2a581d29d/transformed/jetified-play-services-maps-18.1.0/AndroidManifest.xml:33:9-64
 	android:name
@@ -325,7 +336,7 @@ ADDED from [androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transform
 		ADDED from [androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
 	android:name
 		ADDED from [androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:23:9-81
-permission#com.example.law_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+permission#com.bydayjob.bydayjobafrica.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:22:5-24:47
 	android:protectionLevel
 		ADDED from [androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:24:9-44
@@ -335,7 +346,7 @@ uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:26:22-94
-uses-permission#com.example.law_app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+uses-permission#com.bydayjob.bydayjobafrica.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
 ADDED from [androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:26:5-97
 	android:name
 		ADDED from [androidx.core:core:1.9.0] /Users/dollarstir/.gradle/caches/transforms-3/6710ee2e3546b398da00e75003abfc33/transformed/core-1.9.0/AndroidManifest.xml:26:22-94

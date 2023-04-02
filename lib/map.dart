@@ -5,8 +5,10 @@ import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'package:google_places_flutter/google_places_flutter.dart';
+import 'package:google_places_flutter/model/prediction.dart';
+
 class MapScreen extends StatefulWidget {
-  final LatLng nearestOffice = LatLng(5.545230, -0.250080);
 
   MapScreen({Key? key}) : super(key: key);
 
@@ -15,21 +17,67 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
+ final GeolocatorPlatform _geolocatorPlatform = GeolocatorPlatform.instance;
   Completer<GoogleMapController> _controller = Completer();
+  TextEditingController textController =  TextEditingController();
   late BitmapDescriptor usermarkerIcon;
   late BitmapDescriptor officemarkerIcon;
   Position? _currentPosition;
+  LatLng targetOffice = LatLng(5.545230, -0.250080);
+  bool hasPermission = false;
 
-  @override
-  void initState() {
-    super.initState();
+  void _handlePermission() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    serviceEnabled = await _geolocatorPlatform.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      hasPermission = false;
+    }
+
+    permission = await _geolocatorPlatform.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await _geolocatorPlatform.requestPermission();
+      if (permission == LocationPermission.denied) {
+        hasPermission = false;
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      hasPermission = false;
+    }
+
+    hasPermission = true;
+    // setState(() {});
     setCustomMarkerIcon();
     _getCurrentLocation();
   }
 
+  //  Future<void> _getCurrentPosition() async {
+  //   final hasPermission = await _handlePermission();
+
+  //   if (!hasPermission) {
+  //     return;
+  //   }
+
+  //   // final position =  await Geolocator.getCurrentPosition(
+  //   //     desiredAccuracy: LocationAccuracy.high);   
+  //   // setState(() {
+  //   //   // _locationMessage =
+  //   //   //     "${position.latitude},${position.longitude}";
+  //   // });
+  // }
+
+
+  @override
+  void initState() {
+    super.initState();
+    _handlePermission();
+  }
+
   void _openMaps() async {
     final url =
-        'https://www.google.com/maps/search/?api=1&query=${widget.nearestOffice.latitude},${widget.nearestOffice.longitude}';
+        'https://www.google.com/maps/search/?api=1&query=${targetOffice.latitude},${targetOffice.longitude}';
     if (await canLaunch(url)) {
       await launch(url);
     } else {
@@ -70,6 +118,13 @@ class _MapScreenState extends State<MapScreen> {
 
   @override
   Widget build(BuildContext context) {
+    if(!hasPermission || _currentPosition == null) {
+      return Material(
+        child: Center(
+          child: Text("Loading map..."),
+        )
+      );
+    }
     return Scaffold(
       body: Stack(
         children: [
@@ -96,7 +151,7 @@ class _MapScreenState extends State<MapScreen> {
               ),
               Marker(
                 markerId: MarkerId('officeMarker'),
-                position: widget.nearestOffice,
+                position: targetOffice,
                 icon: officemarkerIcon,
                 infoWindow: InfoWindow(title: 'Nearest Office'),
               ),
@@ -129,9 +184,46 @@ class _MapScreenState extends State<MapScreen> {
               ],
             ),
           ),
+          Positioned(
+            top: 24,
+            left: 48,
+            right: 48,
+            child: Material(
+              borderRadius: BorderRadius.circular(24.0),
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: GooglePlaceAutoCompleteTextField(
+                  textEditingController: textController,
+                  googleAPIKey: "AIzaSyAy9xR_ioh6A7CZdMDsSaVm0xkaBhTaMU8",
+                  inputDecoration: InputDecoration(),
+                  debounceTime: 800, // default 600 ms,
+                  countries: ["gh"],// optional by default null is set
+                  isLatLngRequired:true,// if you required coordinates from place detail
+                  getPlaceDetailWithLatLng: (Prediction prediction) {
+                    // this method will return latlng with place detail
+                     targetOffice = LatLng(
+                        double.parse(prediction.lat ?? "${targetOffice.latitude}"), 
+                        double.parse(prediction.lng ?? "${targetOffice.longitude}"),
+                      );
+                      print("===========================");
+                      print("${prediction.lat}, ${prediction.lng}");
+                      print(targetOffice);
+                      print("===========================");
+                      _calculateDistance();
+                  }, // this callback is called when isLatLngRequired is true
+                  itmClick: (Prediction prediction) {
+                      textController.text= prediction.description ?? '';
+                      // textController.selection = TextSelection.fromPosition(TextPosition(offset: prediction.description.length));
+                    }
+                ),
+              ),
+            ),
+    
+          ),
         ],
       ),
       floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           FloatingActionButton(
@@ -160,7 +252,7 @@ class _MapScreenState extends State<MapScreen> {
 
         // floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
+      floatingActionButtonLocation: FloatingActionButtonLocation.startDocked,
     );
   }
 
@@ -185,16 +277,17 @@ class _MapScreenState extends State<MapScreen> {
     _polylineCoordinates.clear();
     _polylineCoordinates
         .add(LatLng(_currentPosition!.latitude, _currentPosition!.longitude));
-    _polylineCoordinates.add(widget.nearestOffice);
+    _polylineCoordinates.add(targetOffice);
     _addPolyLine();
+    _getDistanceInMinutes();
   }
 
   double _getDistanceInKm() {
     double distanceInMeters = Geolocator.distanceBetween(
         _currentPosition!.latitude,
         _currentPosition!.longitude,
-        widget.nearestOffice.latitude,
-        widget.nearestOffice.longitude);
+        targetOffice.latitude,
+        targetOffice.longitude);
     return distanceInMeters / 1000;
   }
 

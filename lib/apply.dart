@@ -558,7 +558,7 @@ startUpload() async{
               child: TextField(
                 controller:_idcard,
                 decoration: InputDecoration(
-                    hintText: 'Ghana Card/Passport Number',
+                    hintText: 'Ghana Card/Passport/ Voters ID Number',
                     border: InputBorder.none),
               ),
             ),

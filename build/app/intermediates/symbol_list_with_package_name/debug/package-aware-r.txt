@@ -1,4 +1,4 @@
-com.example.law_app
+com.bydayjob.bydayjobafrica
 attr activityAction
 attr activityName
 attr alpha

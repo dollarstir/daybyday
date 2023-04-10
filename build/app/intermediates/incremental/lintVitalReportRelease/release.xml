@@ -1,9 +1,8 @@
 <variant
     name="release"
-    package="com.example.law_app"
+    package="com.bydayjob.bydayjobafrica"
     minSdkVersion="20"
     targetSdkVersion="31"
-    shrinking="true"
     mergedManifest="/Users/dollarstir/Documents/Flutter/law-app/build/app/intermediates/merged_manifest/release/AndroidManifest.xml"
     manifestMergeReport="/Users/dollarstir/Documents/Flutter/law-app/build/app/outputs/logs/manifest-merger-release-report.txt"
     proguardFiles="/Users/dollarstir/Documents/Flutter/law-app/build/app/intermediates/default_proguard_files/global/proguard-android.txt-7.1.2:/Users/dollarstir/dev/flutter/packages/flutter_tools/gradle/flutter_proguard_rules.pro:proguard-rules.pro"
@@ -31,7 +30,7 @@
   </manifestPlaceholders>
   <mainArtifact
       classOutputs="/Users/dollarstir/Documents/Flutter/law-app/build/app/intermediates/javac/release/classes:/Users/dollarstir/Documents/Flutter/law-app/build/app/tmp/kotlin-classes/release:/Users/dollarstir/Documents/Flutter/law-app/build/app/kotlinToolingMetadata:/Users/dollarstir/Documents/Flutter/law-app/build/app/intermediates/compile_and_runtime_not_namespaced_r_class_jar/release/R.jar"
-      applicationId="com.example.law_app"
+      applicationId="com.bydayjob.bydayjobafrica"
       generatedSourceFolders="/Users/dollarstir/Documents/Flutter/law-app/build/app/generated/ap_generated_sources/release/out:/Users/dollarstir/Documents/Flutter/law-app/build/app/generated/aidl_source_output_dir/release/out:/Users/dollarstir/Documents/Flutter/law-app/build/app/generated/source/buildConfig/release:/Users/dollarstir/Documents/Flutter/law-app/build/app/generated/renderscript_source_output_dir/release/out"
       generatedResourceFolders="/Users/dollarstir/Documents/Flutter/law-app/build/app/generated/res/rs/release:/Users/dollarstir/Documents/Flutter/law-app/build/app/generated/res/resValues/release">
   </mainArtifact>

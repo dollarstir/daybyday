@@ -153,6 +153,74 @@ class _HomepageState extends State<Homepage> {
                       image: "assets/images/passport.png",
                     ),
                   ),
+
+
+                  GestureDetector(
+                    onTap: () {
+                      tapme("Visa", "assets/images/visa.png");
+                    },
+                    child: CategoryModel(
+                      title: "Visa",
+                      image: "assets/images/visa.png",
+                    ),
+                  ),
+
+
+                  GestureDetector(
+                    onTap: () {
+                      tapme("Parcel Delivery", "assets/images/parcel.png");
+                    },
+                    child: CategoryModel(
+                      title: "Parcel Delivery",
+                      image: "assets/images/parcel.png",
+                    ),
+                  ),
+
+
+                  GestureDetector(
+                    onTap: () {
+                      tapme("Bank Statement", "assets/images/bank.png");
+                    },
+                    child: CategoryModel(
+                      title: "Bank Statement",
+                      image: "assets/images/bank.png",
+                    ),
+                  ),
+
+
+                  GestureDetector(
+                    onTap: () {
+                      tapme("Bank Statement", "assets/images/bank.png");
+                    },
+                    child: CategoryModel(
+                      title: "Bank Statement",
+                      image: "assets/images/bank.png",
+                    ),
+                  ),
+
+
+                  //  GestureDetector(
+                  //   onTap: () {
+                  //     tapme("Bank Statement", "assets/images/bank.png");
+                  //   },
+                  //   child: CategoryModel(
+                  //     title: "Bank Statement",
+                  //     image: "assets/images/bank.png",
+                  //   ),
+                  // ),
+
+
+                  GestureDetector(
+                    onTap: () {
+                      tapme("Birth Cert", "assets/images/birthcert.png");
+                    },
+                    child: CategoryModel(
+                      title: "Birth Cert",
+                      image: "assets/images/birthcert.png",
+                    ),
+                  ),
+
+
                 ],
               ),
             ),
